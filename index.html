@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIED Design Hub: AI Tool Matchmaker</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>AIED Design Hub</h1>
+      <p class="tagline">Vetted AI tools for NZ secondary English teachers, with safety and privacy ratings</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="controls" aria-label="Search and filter tools">
+      <div class="controls-inner">
+        <div class="search-wrap">
+          <label for="search" class="sr-only">Search tools</label>
+          <input
+            type="search"
+            id="search"
+            placeholder="Search by tool name or use case..."
+            aria-label="Search AI tools"
+            autocomplete="off"
+          />
+        </div>
+        <div class="filters">
+          <div class="filter-group">
+            <label for="category-filter">Category</label>
+            <select id="category-filter" aria-label="Filter by category">
+              <option value="">All</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="cost-filter">Cost</label>
+            <select id="cost-filter" aria-label="Filter by cost rating">
+              <option value="">Any</option>
+              <option value="green">Free</option>
+              <option value="amber">Freemium</option>
+              <option value="red">Paid only</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="privacy-filter">Privacy</label>
+            <select id="privacy-filter" aria-label="Filter by privacy rating">
+              <option value="">Any</option>
+              <option value="green">Strong</option>
+              <option value="amber">Some concerns</option>
+              <option value="red">Significant concerns</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="guardrails-filter">Guardrails</label>
+            <select id="guardrails-filter" aria-label="Filter by education guardrails">
+              <option value="">Any</option>
+              <option value="green">Education-specific</option>
+              <option value="amber">General filters</option>
+              <option value="red">Minimal guardrails</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="legend" aria-label="Traffic light legend">
+        <span class="legend-title">Traffic light key:</span>
+        <span class="legend-item"><span class="dot dot-green" aria-hidden="true"></span> Good</span>
+        <span class="legend-item"><span class="dot dot-amber" aria-hidden="true"></span> Caution</span>
+        <span class="legend-item"><span class="dot dot-red" aria-hidden="true"></span> Concern</span>
+      </div>
+    </section>
+
+    <section class="results-section" aria-label="Tool results">
+      <p id="results-count" class="results-count" aria-live="polite" aria-atomic="true"></p>
+      <div id="results-grid" class="results-grid" role="list"></div>
+      <p id="no-results" class="no-results hidden" role="status">
+        No tools match your search. Try different keywords or remove a filter.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      An Open Education Resource developed through
+      <a href="https://www.oe4bw.org" target="_blank" rel="noopener noreferrer">OE4BW (UNESCO)</a>
+      by Laurel Silvester, Rototuna Senior High School, Aotearoa New Zealand.
+      Ratings are reviewed periodically but always verify current policies before classroom use.
+    </p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+{
+  "tools": [
+    {
+      "id": "magicschool-ai",
+      "name": "MagicSchool AI",
+      "url": "https://www.magicschool.ai",
+      "category": "Lesson Planning",
+      "description": "An AI suite built for teachers, with 60+ tools covering lesson planning, differentiation, report writing, and student feedback. Widely used in NZ schools.",
+      "tags": ["lesson planning", "differentiation", "feedback", "rubric", "report writing", "NZ"],
+      "ratings": {
+        "cost": "green",
+        "privacy": "amber",
+        "guardrails": "green",
+        "accessibility": "amber"
+      },
+      "notes": {
+        "cost": "Free for teachers. Paid plans add extra features but the free tier is substantial.",
+        "privacy": "US-based. Claims FERPA and COPPA compliance. Review their student data policy before use with under-18s.",
+        "guardrails": "Built specifically for education. Content is curriculum-appropriate throughout.",
+        "accessibility": "Functional but not fully WCAG 2.1 AA certified."
+      }
+    },
+    {
+      "id": "diffit",
+      "name": "Diffit",
+      "url": "https://diffit.me",
+      "category": "Differentiation",
+      "description": "Generates differentiated reading materials at any level from a URL, topic, or your own text. Particularly useful for adapting complex texts for diverse learners.",
+      "tags": ["differentiation", "reading", "scaffolding", "accessibility", "reading levels"],
+      "ratings": {
+        "cost": "amber",
+        "privacy": "amber",
+        "guardrails": "green",
+        "accessibility": "amber"
+      },
+      "notes": {
+        "cost": "Free tier available with usage limits. Paid plans from around $10/month.",
+        "privacy": "US-based. Limited transparency in privacy policy. Avoid entering personally identifiable student information.",
+        "guardrails": "Content is focused on curriculum adaptation. Output is appropriate for classroom use.",
+        "accessibility": "Basic interface. Screen reader support is limited."
+      }
+    },
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "url": "https://chat.openai.com",
+      "category": "General AI",
+      "description": "OpenAI's general-purpose AI assistant. Highly capable for brainstorming, drafting, and explanation. Not designed specifically for education, so requires teacher guidance on appropriate use.",
+      "tags": ["writing", "brainstorming", "explanation", "general AI", "drafting"],
+      "ratings": {
+        "cost": "amber",
+        "privacy": "amber",
+        "guardrails": "amber",
+        "accessibility": "green"
+      },
+      "notes": {
+        "cost": "Free plan available. ChatGPT Plus is $20/month. ChatGPT Edu plans exist for institutions.",
+        "privacy": "US-based. Conversations may be used for model training unless opted out. Not FERPA/COPPA compliant without a specific education agreement.",
+        "guardrails": "Content filters exist but this is a general-purpose tool. Needs explicit classroom norms to support responsible use.",
+        "accessibility": "Good WCAG 2.1 AA compliance. Works well with screen readers."
+      }
+    },
+    {
+      "id": "claude-ai",
+      "name": "Claude.ai",
+      "url": "https://claude.ai",
+      "category": "General AI",
+      "description": "Anthropic's AI assistant. Strong at nuanced writing, analysis, and reasoning. Notably strong privacy defaults compared to other general AI tools.",
+      "tags": ["writing", "analysis", "reasoning", "general AI", "privacy"],
+      "ratings": {
+        "cost": "amber",
+        "privacy": "green",
+        "guardrails": "amber",
+        "accessibility": "green"
+      },
+      "notes": {
+        "cost": "Free plan available. Claude Pro is $20/month. Free tier has usage limits.",
+        "privacy": "Conversations are not used for model training by default. Strong privacy stance from Anthropic.",
+        "guardrails": "Strong safety training but a general-purpose tool. Establish clear classroom norms for student use.",
+        "accessibility": "Good accessibility. Clean interface works well with assistive technology."
+      }
+    },
+    {
+      "id": "khanmigo",
+      "name": "Khanmigo",
+      "url": "https://www.khanacademy.org/khan-labs",
+      "category": "Tutoring",
+      "description": "Khan Academy's AI tutor. Uses Socratic questioning rather than giving direct answers, making it a strong model for learning. Education guardrails are the strongest of any tool here.",
+      "tags": ["tutoring", "Socratic", "student-facing", "maths", "writing", "safe"],
+      "ratings": {
+        "cost": "amber",
+        "privacy": "green",
+        "guardrails": "green",
+        "accessibility": "green"
+      },
+      "notes": {
+        "cost": "Free for teachers via Khan Academy. Student access requires a subscription ($9/month) unless income-qualified.",
+        "privacy": "COPPA and FERPA compliant. Strong data protection policies. One of the safest options for student data.",
+        "guardrails": "Purpose-built for education. Refuses to do homework for students, uses guided questioning instead.",
+        "accessibility": "Khan Academy has strong accessibility standards. Works well with screen readers and keyboard navigation."
+      }
+    },
+    {
+      "id": "curipod",
+      "name": "Curipod",
+      "url": "https://curipod.com",
+      "category": "Lesson Planning",
+      "description": "Generates interactive lessons with polls, word clouds, and drawing activities. Good for discussion and formative assessment hooks.",
+      "tags": ["interactive lessons", "engagement", "polls", "formative assessment", "discussion"],
+      "ratings": {
+        "cost": "green",
+        "privacy": "amber",
+        "guardrails": "green",
+        "accessibility": "amber"
+      },
+      "notes": {
+        "cost": "Free for educators. Generous free tier.",
+        "privacy": "European company, GDPR compliant. Student responses are collected and stored. Review data retention settings.",
+        "guardrails": "Education platform with moderated content. Appropriate for classroom use.",
+        "accessibility": "Interactive elements may present challenges for some assistive technologies."
+      }
+    },
+    {
+      "id": "canva",
+      "name": "Canva",
+      "url": "https://www.canva.com",
+      "category": "Creative",
+      "description": "Design platform with strong AI features including image generation, text-to-presentation, and Magic Write. Free Education plan available for verified teachers and students.",
+      "tags": ["design", "visual", "presentation", "image generation", "creative", "NZ"],
+      "ratings": {
+        "cost": "green",
+        "privacy": "amber",
+        "guardrails": "amber",
+        "accessibility": "green"
+      },
+      "notes": {
+        "cost": "Education plan is free for verified teachers and students (Canva for Education).",
+        "privacy": "Australian company (listed in US). Data used for product improvement. Opt-out options are limited.",
+        "guardrails": "Content filters on AI image generation but it is a general-use platform. Image generation can produce unexpected results.",
+        "accessibility": "Strong accessibility features. Good screen reader support and keyboard navigation."
+      }
+    },
+    {
+      "id": "grammarly",
+      "name": "Grammarly",
+      "url": "https://www.grammarly.com",
+      "category": "Writing Support",
+      "description": "AI writing assistant for grammar, clarity, and style suggestions. The free tier is useful for polishing student writing. Honest limitation: it focuses on surface-level language, not ideas.",
+      "tags": ["writing", "grammar", "editing", "feedback", "English"],
+      "ratings": {
+        "cost": "amber",
+        "privacy": "amber",
+        "guardrails": "green",
+        "accessibility": "amber"
+      },
+      "notes": {
+        "cost": "Free tier covers grammar and basic suggestions. Pro is $30/month. Education plans available.",
+        "privacy": "US-based. Text is sent to Grammarly servers for processing. Review privacy settings before using with student writing.",
+        "guardrails": "Writing assistance only. Does not generate harmful content. Safe scope of use.",
+        "accessibility": "Browser extension works well but the standalone app has some accessibility gaps."
+      }
+    },
+    {
+      "id": "notebooklm",
+      "name": "NotebookLM",
+      "url": "https://notebooklm.google.com",
+      "category": "Research",
+      "description": "Google's AI research tool that lets you upload documents and ask questions of them. Useful for helping students analyse texts or for teachers synthesising research. Audio overview feature generates podcast-style summaries.",
+      "tags": ["research", "documents", "analysis", "reading", "synthesis", "podcast"],
+      "ratings": {
+        "cost": "green",
+        "privacy": "amber",
+        "guardrails": "amber",
+        "accessibility": "green"
+      },
+      "notes": {
+        "cost": "Free to use with a Google account.",
+        "privacy": "Subject to Google's standard data policies. Use Google Workspace for Education accounts for stronger student data protections.",
+        "guardrails": "Grounded in the documents you upload, which reduces hallucination risk. Still a general-purpose tool.",
+        "accessibility": "Google's standard accessibility, which is generally strong."
+      }
+    }
+  ]
+}
