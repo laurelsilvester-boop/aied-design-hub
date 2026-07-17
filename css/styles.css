@@ -6,9 +6,10 @@
 }
 
 :root {
-  --primary:       #1d3461;
-  --primary-hover: #274690;
-  --accent:        #1e88e5;
+  --primary:       #1a3c34;
+  --primary-hover: #234f45;
+  --accent:        #ff0090;
+  --accent-hover:  #d1007a;
   --bg:            #f4f6f9;
   --card-bg:       #ffffff;
   --text:          #1a1a2e;
@@ -90,7 +91,7 @@ h1 {
 .search-wrap input:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.15);
+  box-shadow: 0 0 0 3px rgba(255, 0, 144, 0.18);
 }
 
 .filters {
@@ -128,7 +129,7 @@ h1 {
 .filter-group select:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.15);
+  box-shadow: 0 0 0 3px rgba(255, 0, 144, 0.18);
 }
 
 /* === Legend === */
@@ -212,8 +213,8 @@ h1 {
   font-weight: 600;
   padding: 0.2rem 0.6rem;
   border-radius: 20px;
-  background: #e8f0fe;
-  color: var(--primary-hover);
+  background: #ffe0f0;
+  color: var(--accent-hover);
   white-space: nowrap;
   flex-shrink: 0;
   letter-spacing: 0.02em;
@@ -275,7 +276,7 @@ h1 {
 .visit-link:focus {
   background: var(--primary-hover);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(29, 52, 97, 0.3);
+  box-shadow: 0 0 0 3px rgba(255, 0, 144, 0.35);
 }
 
 /* === Utility === */
