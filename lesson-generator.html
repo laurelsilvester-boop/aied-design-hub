@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AIED Design Hub: Lesson Idea Generator</title>
+<style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --primary:       #1a3c34;
+    --primary-hover: #234f45;
+    --accent:        #ff0090;
+    --accent-hover:  #d1007a;
+    --bg:            #f4f6f9;
+    --card-bg:       #ffffff;
+    --text:          #1a1a2e;
+    --text-muted:    #5a6474;
+    --border:        #dde2e8;
+    --radius:        8px;
+    --shadow:        0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    background: var(--primary);
+    color: white;
+    padding: 2rem 1.25rem;
+    text-align: center;
+  }
+
+  .header-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.4rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    opacity: 0.85;
+    max-width: 56ch;
+    margin: 0 auto;
+  }
+
+  main {
+    flex: 1;
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.75rem 1.25rem 3rem;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+  }
+
+  .field {
+    margin-bottom: 1.1rem;
+  }
+
+  .field:last-child {
+    margin-bottom: 0;
+  }
+
+  label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    color: var(--text);
+  }
+
+  .hint {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.35rem;
+  }
+
+  select,
+  input[type="password"],
+  input[type="text"] {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--text);
+    background: white;
+    transition: border-color 0.15s;
+  }
+
+  select:focus,
+  input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255, 0, 144, 0.18);
+  }
+
+  button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: var(--radius);
+    background: var(--accent);
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  button:hover:not(:disabled) {
+    background: var(--accent-hover);
+  }
+
+  button:disabled {
+    background: var(--text-muted);
+    cursor: not-allowed;
+  }
+
+  .key-card {
+    border-left: 4px solid var(--accent);
+  }
+
+  #status {
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+    min-height: 1.2rem;
+  }
+
+  #status.error {
+    color: #c0392b;
+  }
+
+  #status.loading {
+    color: var(--text-muted);
+  }
+
+  #output-card {
+    display: none;
+  }
+
+  #output-card h2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  #output-meta {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+
+  #output {
+    font-size: 0.95rem;
+  }
+
+  #output h3 {
+    color: var(--primary);
+    font-size: 1rem;
+    margin: 1rem 0 0.4rem;
+  }
+
+  #output h3:first-child {
+    margin-top: 0;
+  }
+
+  #output ul {
+    margin: 0 0 0.75rem 1.25rem;
+  }
+
+  #output li {
+    margin-bottom: 0.4rem;
+  }
+
+  #output p {
+    margin-bottom: 0.75rem;
+  }
+
+  footer {
+    text-align: center;
+    padding: 1.5rem 1.25rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  footer a {
+    color: var(--primary);
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>Lesson Idea Generator</h1>
+      <p class="tagline">AI-generated activity ideas and discussion hooks for NZ secondary English classes</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="card key-card">
+      <h2>Anthropic API key</h2>
+      <div class="field">
+        <label for="api-key">API key</label>
+        <input type="password" id="api-key" placeholder="sk-ant-..." autocomplete="off" />
+        <p class="hint">
+          Entered here for now and used only in your browser to call the Anthropic API directly. It is not saved
+          or sent anywhere else. We will move this to a secure backend in a future version.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Class details</h2>
+      <form id="generator-form">
+        <div class="field">
+          <label for="year-level">Year level</label>
+          <select id="year-level" required>
+            <option value="Year 9">Year 9</option>
+            <option value="Year 10">Year 10</option>
+            <option value="Year 11">Year 11</option>
+            <option value="Year 12">Year 12</option>
+            <option value="Year 13">Year 13</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="topic">Topic</label>
+          <select id="topic" required>
+            <optgroup label="General topics">
+              <option>Reading and viewing texts</option>
+              <option>Writing for purpose and audience</option>
+              <option>Oral language and communication</option>
+              <option>Visual language</option>
+              <option>Poetry</option>
+              <option>Fiction and novel study</option>
+              <option>Drama and script</option>
+              <option>Non-fiction and media texts</option>
+              <option>Figurative language</option>
+              <option>Grammar and vocabulary</option>
+              <option>Structural and language analysis</option>
+            </optgroup>
+            <optgroup label="NCEA Level 1">
+              <option>AS91924 Verbal language use in context</option>
+              <option>AS91925 Studied text</option>
+              <option>AS91926 Writing using stylistic conventions</option>
+              <option>AS91927 Unfamiliar texts</option>
+            </optgroup>
+            <optgroup label="NCEA Level 2">
+              <option>AS91098 Studied written text</option>
+              <option>AS91099 Studied visual/oral text</option>
+              <option>AS91100 Unfamiliar written texts</option>
+              <option>AS91101 Crafted and controlled writing</option>
+              <option>AS91102 Oral text</option>
+              <option>AS91103 Visual and verbal text</option>
+              <option>AS91104 Connections across texts</option>
+              <option>AS91105 Information literacy</option>
+              <option>AS91106 Personal responses to independent reading</option>
+              <option>AS91107 Visual/oral text close viewing</option>
+            </optgroup>
+            <optgroup label="NCEA Level 3">
+              <option>AS91472 Studied written text</option>
+              <option>AS91473 Studied visual/oral text</option>
+              <option>AS91474 Unfamiliar written texts</option>
+              <option>AS91475 Writing</option>
+              <option>AS91476 Oral text</option>
+              <option>AS91477 Visual text</option>
+              <option>AS91478 Connections across texts</option>
+              <option>AS91479 Literature and language using critical texts</option>
+              <option>AS91480 Visual/oral text close reading</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <button type="submit" id="submit-btn">Generate ideas</button>
+        <p id="status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <div class="card" id="output-card">
+      <h2>
+        <span>Activity ideas and discussion hooks</span>
+        <span id="output-meta"></span>
+      </h2>
+      <div id="output"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      An Open Education Resource developed through
+      <a href="https://www.oe4bw.org" target="_blank" rel="noopener noreferrer">OE4BW (UNESCO)</a>
+      by Laurel Silvester, Rototuna Senior High School, Aotearoa New Zealand.
+    </p>
+  </footer>
+
+  <script>
+    const SYSTEM_PROMPT = `You are a curriculum design assistant for New Zealand secondary school English teachers. Ground every response in two frameworks:
+
+1. The UNESCO AI Competency Framework for Teachers, particularly the aspects of using AI to enhance pedagogy, promoting equitable and ethical use of AI, and building students' AI and information literacy alongside subject learning.
+2. The New Zealand Curriculum, English learning area, including its focus on making meaning and creating meaning across oral, written, and visual text, and progression through the achievement objectives and, where relevant, NCEA achievement standards.
+
+You generate short, practical activity ideas and discussion hooks for a given year level and topic. You do NOT write full lesson plans. Do not include learning intentions, success criteria, timings, resourcing lists, or step-by-step lesson structure.
+
+Respond in this exact format using markdown:
+
+### Activity ideas
+- 3 to 4 short, concrete classroom activity ideas (one line each) suitable for the stated year level and topic, appropriate to the sophistication expected at that level
+
+### Discussion hooks
+- 3 to 4 open-ended discussion questions or provocations that could start or extend a lesson on this topic
+
+### AI literacy angle
+- 1 to 2 short suggestions for how AI tools or AI literacy could be woven into this topic responsibly, in line with the UNESCO AI Competency Framework for Teachers
+
+Keep the whole response concise. Use plain, teacher-friendly language. Do not add any preamble, sign-off, or extra sections beyond the three above.`;
+
+    const form = document.getElementById('generator-form');
+    const apiKeyInput = document.getElementById('api-key');
+    const submitBtn = document.getElementById('submit-btn');
+    const statusEl = document.getElementById('status');
+    const outputCard = document.getElementById('output-card');
+    const outputEl = document.getElementById('output');
+    const outputMeta = document.getElementById('output-meta');
+
+    function escapeHtml(str) {
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+
+    function renderMarkdown(text) {
+      const lines = escapeHtml(text).split('\n');
+      let html = '';
+      let inList = false;
+
+      const closeList = () => {
+        if (inList) {
+          html += '</ul>';
+          inList = false;
+        }
+      };
+
+      for (const rawLine of lines) {
+        const line = rawLine.trim();
+
+        if (!line) {
+          closeList();
+          continue;
+        }
+
+        const headingMatch = line.match(/^#{1,3}\s+(.*)$/);
+        if (headingMatch) {
+          closeList();
+          html += `<h3>${headingMatch[1]}</h3>`;
+          continue;
+        }
+
+        const bulletMatch = line.match(/^[-*]\s+(.*)$/);
+        if (bulletMatch) {
+          if (!inList) {
+            html += '<ul>';
+            inList = true;
+          }
+          html += `<li>${boldify(bulletMatch[1])}</li>`;
+          continue;
+        }
+
+        closeList();
+        html += `<p>${boldify(line)}</p>`;
+      }
+
+      closeList();
+      return html;
+    }
+
+    function boldify(str) {
+      return str.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    }
+
+    function setStatus(message, kind) {
+      statusEl.textContent = message;
+      statusEl.className = kind || '';
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const apiKey = apiKeyInput.value.trim();
+      if (!apiKey) {
+        setStatus('Enter your Anthropic API key above first.', 'error');
+        apiKeyInput.focus();
+        return;
+      }
+
+      const yearLevel = document.getElementById('year-level').value;
+      const topic = document.getElementById('topic').value;
+
+      submitBtn.disabled = true;
+      outputCard.style.display = 'none';
+      setStatus('Generating ideas...', 'loading');
+
+      try {
+        const response = await fetch('https://api.anthropic.com/v1/messages', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+            'x-api-key': apiKey,
+            'anthropic-version': '2023-06-01',
+            'anthropic-dangerous-direct-browser-access': 'true'
+          },
+          body: JSON.stringify({
+            model: 'claude-haiku-4-5-20251001',
+            max_tokens: 600,
+            system: SYSTEM_PROMPT,
+            messages: [
+              {
+                role: 'user',
+                content: `Year level: ${yearLevel}\nTopic: ${topic}`
+              }
+            ]
+          })
+        });
+
+        if (!response.ok) {
+          const errorBody = await response.json().catch(() => null);
+          const message = errorBody && errorBody.error && errorBody.error.message
+            ? errorBody.error.message
+            : `Request failed with status ${response.status}`;
+          throw new Error(message);
+        }
+
+        const data = await response.json();
+        const text = (data.content || [])
+          .filter((block) => block.type === 'text')
+          .map((block) => block.text)
+          .join('\n');
+
+        outputEl.innerHTML = renderMarkdown(text || 'No response received.');
+        outputMeta.textContent = `${yearLevel} - ${topic}`;
+        outputCard.style.display = 'block';
+        setStatus('', '');
+      } catch (err) {
+        setStatus(`Something went wrong: ${err.message}`, 'error');
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
