@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AIED Design Hub: AI in Education News</title>
+<style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --primary:       #1a3c34;
+    --primary-hover: #234f45;
+    --accent:        #ff0090;
+    --accent-hover:  #d1007a;
+    --bg:            #f4f6f9;
+    --card-bg:       #ffffff;
+    --text:          #1a1a2e;
+    --text-muted:    #5a6474;
+    --border:        #dde2e8;
+    --radius:        8px;
+    --shadow:        0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* === Header === */
+  header {
+    background: var(--primary);
+    color: white;
+    padding: 2rem 1.25rem;
+    text-align: center;
+  }
+
+  .header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.4rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    opacity: 0.85;
+    max-width: 56ch;
+    margin: 0 auto;
+  }
+
+  /* === Main === */
+  main {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 3rem;
+    flex: 1;
+  }
+
+  section.block {
+    margin-bottom: 3rem;
+  }
+
+  .block-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 0.6rem;
+  }
+
+  .block-header h2 {
+    font-size: 1.4rem;
+    color: var(--primary);
+  }
+
+  .block-sub {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  /* === Feed status === */
+  .feed-status {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .refresh-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .refresh-btn:hover {
+    background: var(--primary-hover);
+  }
+
+  .refresh-btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  /* === Source groups === */
+  .source-group {
+    margin-bottom: 2rem;
+  }
+
+  .source-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .source-count {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: var(--border);
+    border-radius: 999px;
+    padding: 0.1rem 0.6rem;
+  }
+
+  .article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .article-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1rem 1.25rem;
+  }
+
+  .article-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+
+  .article-title a {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .article-title a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  .article-source {
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  .article-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .article-link:hover {
+    text-decoration: underline;
+  }
+
+  .feed-error, .feed-loading {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    background: var(--card-bg);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 0.9rem 1.1rem;
+  }
+
+  .feed-error {
+    color: #c0392b;
+  }
+
+  .feed-error a {
+    color: var(--accent);
+  }
+
+  /* === Curated resources === */
+  .resource-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .resource-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1rem 1.25rem;
+  }
+
+  .resource-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .resource-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .resource-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .resource-link:hover {
+    text-decoration: underline;
+  }
+
+  .placeholder-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.75rem;
+    font-style: italic;
+  }
+
+  /* === Footer === */
+  footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 1.25rem;
+    font-size: 0.82rem;
+  }
+
+  footer a {
+    color: white;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>AI in Education News</h1>
+      <p class="tagline">Live coverage and curated research on artificial intelligence in education, gathered for Aotearoa New Zealand educators</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="block" aria-label="Live AI news feed">
+      <div class="block-header">
+        <h2>Live AI News Feed</h2>
+        <span class="block-sub">Updated on page load</span>
+      </div>
+      <div class="feed-status" id="feed-status">
+        <button class="refresh-btn" id="refresh-btn" type="button">Refresh feeds</button>
+      </div>
+      <div id="feeds-container"></div>
+    </section>
+
+    <section class="block" aria-label="Curated scholarly resources">
+      <div class="block-header">
+        <h2>Curated Scholarly Resources</h2>
+        <span class="block-sub">Placeholder examples</span>
+      </div>
+      <div class="resource-list">
+        <article class="resource-card">
+          <h3 class="resource-title">Artificial Intelligence in Education: Promises and Implications for Teaching and Learning</h3>
+          <p class="resource-meta">Wayne Holmes, Maya Bialik &amp; Charles Fadel — 2019</p>
+          <a class="resource-link" href="https://www.researchgate.net/publication/338236306" target="_blank" rel="noopener noreferrer">Read more &rarr;</a>
+        </article>
+        <article class="resource-card">
+          <h3 class="resource-title">Generative AI and the Future of Education: Ragnarok or Reformation?</h3>
+          <p class="resource-meta">George Siemens &amp; Fabio Nascimbeni — 2023</p>
+          <a class="resource-link" href="https://doi.org/10.1007/s10758-023-09652-3" target="_blank" rel="noopener noreferrer">Read more &rarr;</a>
+        </article>
+        <article class="resource-card">
+          <h3 class="resource-title">Practical and Ethical Challenges of Large Language Models in Education</h3>
+          <p class="resource-meta">Lixiang Yan, Lele Sha, Linxuan Zhao et al. — 2024</p>
+          <a class="resource-link" href="https://doi.org/10.1111/bjet.13370" target="_blank" rel="noopener noreferrer">Read more &rarr;</a>
+        </article>
+      </div>
+      <p class="placeholder-note">This section is a placeholder. Replace these entries with your own curated bibliography.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      An Open Education Resource developed through
+      <a href="https://www.oe4bw.org" target="_blank" rel="noopener noreferrer">OE4BW (UNESCO)</a>
+      by Laurel Silvester, AIED Design Hub, Aotearoa New Zealand.
+    </p>
+    <p class="back-link"><a href="index.html">&larr; Back to AI Tool Matchmaker</a></p>
+  </footer>
+
+  <script>
+    const RSS2JSON_ENDPOINT = "https://api.rss2json.com/v1/api.json?rss_url=";
+    const ARTICLES_PER_SOURCE = 5;
+
+    const FEEDS = [
+      { name: "EdSurge", url: "https://www.edsurge.com/articles_rss" },
+      { name: "The Hechinger Report", url: "https://hechingerreport.org/feed/" },
+      { name: "Education Week", url: "https://www.edweek.org/feed.rss" },
+      { name: "The Verge AI", url: "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml" }
+    ];
+
+    const container = document.getElementById("feeds-container");
+    const statusEl = document.getElementById("feed-status");
+    const refreshBtn = document.getElementById("refresh-btn");
+
+    function escapeHtml(str) {
+      const div = document.createElement("div");
+      div.textContent = str || "";
+      return div.innerHTML;
+    }
+
+    function formatDate(pubDate) {
+      const d = new Date(pubDate);
+      if (isNaN(d.getTime())) return "";
+      return d.toLocaleDateString("en-NZ", { day: "numeric", month: "short", year: "numeric" });
+    }
+
+    function renderSourcePlaceholder(source) {
+      const group = document.createElement("div");
+      group.className = "source-group";
+      group.id = `source-${cssId(source.name)}`;
+      group.innerHTML = `
+        <div class="source-title">${escapeHtml(source.name)} <span class="source-count" data-count>&hellip;</span></div>
+        <div class="feed-loading" data-state>Loading latest articles&hellip;</div>
+      `;
+      return group;
+    }
+
+    function cssId(name) {
+      return name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    }
+
+    async function loadFeed(source) {
+      const group = document.getElementById(`source-${cssId(source.name)}`);
+      const stateEl = group.querySelector("[data-state]");
+      const countEl = group.querySelector("[data-count]");
+
+      try {
+        const apiUrl = RSS2JSON_ENDPOINT + encodeURIComponent(source.url);
+        const res = await fetch(apiUrl);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+
+        if (data.status !== "ok" || !Array.isArray(data.items)) {
+          throw new Error(data.message || "Feed unavailable");
+        }
+
+        const items = data.items.slice(0, ARTICLES_PER_SOURCE);
+
+        if (items.length === 0) {
+          stateEl.className = "feed-error";
+          stateEl.textContent = "No articles found in this feed right now.";
+          countEl.textContent = "0";
+          return;
+        }
+
+        countEl.textContent = String(items.length);
+
+        const list = document.createElement("div");
+        list.className = "article-list";
+        list.innerHTML = items.map(item => `
+          <article class="article-card">
+            <h3 class="article-title"><a href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a></h3>
+            <div class="article-meta">
+              <span class="article-source">${escapeHtml(source.name)}</span>
+              <span>${escapeHtml(formatDate(item.pubDate))}</span>
+              <a class="article-link" href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer">Read more &rarr;</a>
+            </div>
+          </article>
+        `).join("");
+
+        stateEl.replaceWith(list);
+      } catch (err) {
+        countEl.textContent = "!";
+        stateEl.className = "feed-error";
+        stateEl.innerHTML = `Couldn't load this feed (${escapeHtml(err.message)}). <a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">View the feed directly &rarr;</a>`;
+      }
+    }
+
+    async function loadAllFeeds() {
+      refreshBtn.disabled = true;
+      refreshBtn.textContent = "Loading…";
+      container.innerHTML = "";
+
+      FEEDS.forEach(source => container.appendChild(renderSourcePlaceholder(source)));
+
+      await Promise.all(FEEDS.map(loadFeed));
+
+      refreshBtn.disabled = false;
+      refreshBtn.textContent = "Refresh feeds";
+    }
+
+    refreshBtn.addEventListener("click", loadAllFeeds);
+    window.addEventListener("DOMContentLoaded", loadAllFeeds);
+  </script>
+</body>
+</html>
