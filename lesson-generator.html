@@ -4,6 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>AIED Design Hub: Lesson Idea Generator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
   *, *::before, *::after {
     box-sizing: border-box;
@@ -16,17 +19,15 @@
     --primary-hover: #234f45;
     --accent:        #ff0090;
     --accent-hover:  #d1007a;
-    --bg:            #f4f6f9;
-    --card-bg:       #ffffff;
+    --bg:            #ffffff;
     --text:          #1a1a2e;
     --text-muted:    #5a6474;
-    --border:        #dde2e8;
-    --radius:        8px;
-    --shadow:        0 2px 8px rgba(0, 0, 0, 0.08);
+    --divider:       #e3e6ea;
+    --font: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: var(--font);
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
@@ -35,64 +36,72 @@
     flex-direction: column;
   }
 
+  a {
+    color: var(--accent);
+  }
+
+  a:hover,
+  a:focus {
+    color: var(--accent-hover);
+  }
+
   header {
-    background: var(--primary);
-    color: white;
-    padding: 2rem 1.25rem;
-    text-align: center;
+    background: var(--bg);
+    padding: 3.5rem 1.5rem 2rem;
+    border-bottom: 1px solid var(--divider);
   }
 
   .header-inner {
-    max-width: 720px;
+    max-width: 880px;
     margin: 0 auto;
   }
 
   h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    margin-bottom: 0.4rem;
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--primary);
+    margin-bottom: 0.6rem;
   }
 
   .tagline {
-    font-size: 0.95rem;
-    opacity: 0.85;
-    max-width: 68ch;
-    margin: 0 auto;
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 72ch;
   }
 
   .tagline-note {
-    font-size: 0.85rem;
-    opacity: 0.85;
-    max-width: 68ch;
-    margin: 0.75rem auto 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    max-width: 72ch;
+    margin-top: 0.75rem;
   }
 
   main {
     flex: 1;
-    max-width: 720px;
+    max-width: 880px;
     width: 100%;
     margin: 0 auto;
-    padding: 1.75rem 1.25rem 3rem;
+    padding: 0 1.5rem 3rem;
   }
 
   .card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding: 2rem 0;
+  }
+
+  main > .card + .card {
+    border-top: 1px solid var(--divider);
   }
 
   .card h2 {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 1.1rem;
     color: var(--primary);
   }
 
   .field {
-    margin-bottom: 1.1rem;
+    margin-bottom: 1.25rem;
   }
 
   .field:last-child {
@@ -103,42 +112,42 @@
     display: block;
     font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.4rem;
     color: var(--text);
   }
 
   .hint {
     font-size: 0.8rem;
     color: var(--text-muted);
-    margin-top: 0.35rem;
+    margin-top: 0.4rem;
   }
 
   select,
   input[type="password"],
   input[type="text"] {
     width: 100%;
-    padding: 0.6rem 0.75rem;
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius);
+    padding: 0.55rem 0;
+    border: none;
+    border-bottom: 1.5px solid var(--divider);
+    border-radius: 0;
     font-size: 1rem;
     font-family: inherit;
     color: var(--text);
-    background: white;
+    background: transparent;
     transition: border-color 0.15s;
   }
 
   select:focus,
   input:focus {
     outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(255, 0, 144, 0.18);
+    border-bottom-color: var(--accent);
   }
 
   button {
     width: 100%;
-    padding: 0.75rem 1rem;
+    padding: 0.8rem 1rem;
     border: none;
-    border-radius: var(--radius);
+    border-radius: 999px;
     background: var(--accent);
     color: white;
     font-size: 1rem;
@@ -156,13 +165,9 @@
     cursor: not-allowed;
   }
 
-  .key-card {
-    border-left: 4px solid var(--accent);
-  }
-
   #status {
     font-size: 0.9rem;
-    margin-top: 0.75rem;
+    margin-top: 0.9rem;
     min-height: 1.2rem;
   }
 
@@ -218,14 +223,15 @@
   }
 
   footer {
-    text-align: center;
-    padding: 1.5rem 1.25rem;
-    font-size: 0.8rem;
+    padding: 2rem 1.5rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
+    border-top: 1px solid var(--divider);
   }
 
-  footer a {
-    color: var(--primary);
+  footer p {
+    max-width: 880px;
+    margin: 0 auto;
   }
 </style>
 </head>
@@ -239,7 +245,7 @@
   </header>
 
   <main>
-    <div class="card key-card">
+    <div class="card">
       <h2>Anthropic API key</h2>
       <div class="field">
         <label for="api-key">API key</label>
