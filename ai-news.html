@@ -220,6 +220,78 @@
   }
 
   /* === Curated resources === */
+  .tag-filter-bar {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .tag-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .tag-group-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    min-width: 4.5rem;
+  }
+
+  .tag-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tag-btn {
+    background: white;
+    border: 1.5px solid var(--primary);
+    color: var(--primary);
+    border-radius: 999px;
+    padding: 0.3rem 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+
+  .tag-btn:hover {
+    background: rgba(26, 60, 52, 0.08);
+  }
+
+  .tag-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  .tag-btn.active:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+  }
+
+  .clear-tags-btn {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+  }
+
   .resource-list {
     display: flex;
     flex-direction: column;
@@ -258,11 +330,29 @@
     text-decoration: underline;
   }
 
-  .placeholder-note {
-    font-size: 0.8rem;
+  .resource-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.6rem;
+  }
+
+  .resource-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--primary);
+    background: rgba(26, 60, 52, 0.08);
+    border-radius: 999px;
+    padding: 0.15rem 0.6rem;
+  }
+
+  .no-resources {
+    font-size: 0.88rem;
     color: var(--text-muted);
-    margin-top: 0.75rem;
-    font-style: italic;
+    background: var(--card-bg);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 0.9rem 1.1rem;
   }
 
   /* === Footer === */
@@ -276,11 +366,6 @@
 
   footer a {
     color: white;
-  }
-
-  .back-link {
-    display: inline-block;
-    margin-top: 0.5rem;
   }
 </style>
 </head>
@@ -309,23 +394,19 @@
         <h2>Curated Scholarly Resources</h2>
         <span class="block-sub">Placeholder examples</span>
       </div>
-      <div class="resource-list">
-        <article class="resource-card">
-          <h3 class="resource-title">Artificial Intelligence in Education: Promises and Implications for Teaching and Learning</h3>
-          <p class="resource-meta">Wayne Holmes, Maya Bialik &amp; Charles Fadel — 2019</p>
-          <a class="resource-link" href="https://www.researchgate.net/publication/338236306" target="_blank" rel="noopener noreferrer">Read more &rarr;</a>
-        </article>
-        <article class="resource-card">
-          <h3 class="resource-title">Generative AI and the Future of Education: Ragnarok or Reformation?</h3>
-          <p class="resource-meta">George Siemens &amp; Fabio Nascimbeni — 2023</p>
-          <a class="resource-link" href="https://doi.org/10.1007/s10758-023-09652-3" target="_blank" rel="noopener noreferrer">Read more &rarr;</a>
-        </article>
-        <article class="resource-card">
-          <h3 class="resource-title">Practical and Ethical Challenges of Large Language Models in Education</h3>
-          <p class="resource-meta">Lixiang Yan, Lele Sha, Linxuan Zhao et al. — 2024</p>
-          <a class="resource-link" href="https://doi.org/10.1111/bjet.13370" target="_blank" rel="noopener noreferrer">Read more &rarr;</a>
-        </article>
+      <div class="tag-filter-bar" aria-label="Filter resources by tag">
+        <div class="tag-group">
+          <span class="tag-group-label">Topic</span>
+          <div class="tag-buttons" id="topic-tag-buttons"></div>
+        </div>
+        <div class="tag-group">
+          <span class="tag-group-label">Source</span>
+          <div class="tag-buttons" id="source-tag-buttons"></div>
+        </div>
+        <button class="clear-tags-btn" id="clear-tags-btn" type="button" hidden>Clear filters</button>
       </div>
+      <div class="resource-list" id="resource-list"></div>
+      <p class="no-resources" id="no-resources" hidden>No resources match the selected tags.</p>
     </section>
   </main>
 
@@ -441,6 +522,91 @@
 
     refreshBtn.addEventListener("click", loadAllFeeds);
     window.addEventListener("DOMContentLoaded", loadAllFeeds);
+
+    // === Curated scholarly resources: tag filtering ===
+    const TOPIC_TAGS = ["AI Ethics", "AI Literacy", "Generative AI", "Assessment", "Pedagogy", "Critical Thinking", "Digital Citizenship"];
+    const SOURCE_TAGS = ["NZ Specific", "International", "UNESCO", "Academic Journal", "Policy Document"];
+
+    const RESOURCES = [
+      {
+        title: "Artificial Intelligence in Education: Promises and Implications for Teaching and Learning",
+        meta: "Wayne Holmes, Maya Bialik & Charles Fadel — 2019",
+        link: "https://www.researchgate.net/publication/338236306",
+        tags: ["AI Literacy", "Pedagogy", "Policy Document", "International"]
+      },
+      {
+        title: "Generative AI and the Future of Education: Ragnarok or Reformation?",
+        meta: "George Siemens & Fabio Nascimbeni — 2023",
+        link: "https://doi.org/10.1007/s10758-023-09652-3",
+        tags: ["Generative AI", "Critical Thinking", "Academic Journal", "International"]
+      },
+      {
+        title: "Practical and Ethical Challenges of Large Language Models in Education",
+        meta: "Lixiang Yan, Lele Sha, Linxuan Zhao et al. — 2024",
+        link: "https://doi.org/10.1111/bjet.13370",
+        tags: ["AI Ethics", "Generative AI", "Assessment", "Academic Journal"]
+      }
+    ];
+
+    const selectedTags = new Set();
+    const resourceListEl = document.getElementById("resource-list");
+    const noResourcesEl = document.getElementById("no-resources");
+    const clearTagsBtn = document.getElementById("clear-tags-btn");
+
+    function renderTagButtons(containerId, tags) {
+      const el = document.getElementById(containerId);
+      el.innerHTML = tags.map(tag => `
+        <button type="button" class="tag-btn" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</button>
+      `).join("");
+      el.querySelectorAll(".tag-btn").forEach(btn => {
+        btn.addEventListener("click", () => toggleTag(btn.dataset.tag));
+      });
+    }
+
+    function toggleTag(tag) {
+      if (selectedTags.has(tag)) {
+        selectedTags.delete(tag);
+      } else {
+        selectedTags.add(tag);
+      }
+      updateTagButtonStates();
+      renderResources();
+    }
+
+    function updateTagButtonStates() {
+      document.querySelectorAll(".tag-btn").forEach(btn => {
+        btn.classList.toggle("active", selectedTags.has(btn.dataset.tag));
+      });
+      clearTagsBtn.hidden = selectedTags.size === 0;
+    }
+
+    function renderResources() {
+      const filtered = selectedTags.size === 0
+        ? RESOURCES
+        : RESOURCES.filter(r => r.tags.some(tag => selectedTags.has(tag)));
+
+      noResourcesEl.hidden = filtered.length > 0;
+      resourceListEl.innerHTML = filtered.map(r => `
+        <article class="resource-card">
+          <h3 class="resource-title">${escapeHtml(r.title)}</h3>
+          <p class="resource-meta">${escapeHtml(r.meta)}</p>
+          <a class="resource-link" href="${escapeHtml(r.link)}" target="_blank" rel="noopener noreferrer">Read more &rarr;</a>
+          <div class="resource-tags">
+            ${r.tags.map(tag => `<span class="resource-tag">${escapeHtml(tag)}</span>`).join("")}
+          </div>
+        </article>
+      `).join("");
+    }
+
+    clearTagsBtn.addEventListener("click", () => {
+      selectedTags.clear();
+      updateTagButtonStates();
+      renderResources();
+    });
+
+    renderTagButtons("topic-tag-buttons", TOPIC_TAGS);
+    renderTagButtons("source-tag-buttons", SOURCE_TAGS);
+    renderResources();
   </script>
 </body>
 </html>
