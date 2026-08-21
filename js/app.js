@@ -49,6 +49,14 @@ function renderCards(tools) {
     card.setAttribute('role', 'listitem');
 
     card.innerHTML = `
+      <img
+        class="tool-logo"
+        src="https://www.google.com/s2/favicons?domain=${escHtml(getDomain(tool.url))}&sz=64"
+        alt=""
+        width="40"
+        height="40"
+        loading="lazy"
+      />
       <div class="card-header">
         <span class="tool-name">${escHtml(tool.name)}</span>
         <span class="category-badge">${escHtml(tool.category)}</span>
@@ -83,6 +91,14 @@ function trafficItem(label, rating, note) {
       <span class="dot dot-${escHtml(rating)}" aria-hidden="true"></span>
       <span>${escHtml(label)}</span>
     </div>`;
+}
+
+function getDomain(url) {
+  try {
+    return new URL(url).hostname;
+  } catch (error) {
+    return url;
+  }
 }
 
 function escHtml(str) {
