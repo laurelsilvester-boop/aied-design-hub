@@ -82,7 +82,8 @@ h1 {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  align-items: stretch;
+  gap: 1.75rem;
 }
 
 .search-wrap input {
@@ -110,7 +111,7 @@ h1 {
 .filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.75rem;
+  gap: 2.5rem;
   align-items: flex-end;
 }
 
@@ -340,17 +341,6 @@ footer p {
 }
 
 /* === Responsive === */
-@media (min-width: 560px) {
-  .controls-inner {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .search-wrap {
-    flex: 1;
-  }
-}
-
 @media (max-width: 400px) {
   h1 { font-size: 1.7rem; }
 }
