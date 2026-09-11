@@ -19,7 +19,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "green",
       "teacherTrafficLight": "green",
-      "notes": "US-based, check data storage"
+      "notes": "US-based, check data storage",
+      "costTrafficLight": "amber"
     },
     {
       "id": "diffit",
@@ -39,7 +40,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "US-based; teacher should review outputs before sharing with students"
+      "notes": "US-based; teacher should review outputs before sharing with students",
+      "costTrafficLight": "amber"
     },
     {
       "id": "chatgpt",
@@ -60,7 +62,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "No education guardrails on free tier; data used for training by default; best with explicit teacher guidance"
+      "notes": "No education guardrails on free tier; data used for training by default; best with explicit teacher guidance",
+      "costTrafficLight": "amber"
     },
     {
       "id": "claude-ai",
@@ -80,7 +83,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "No student-specific guardrails; strong on reasoning and writing quality; excellent for teacher resource creation"
+      "notes": "No student-specific guardrails; strong on reasoning and writing quality; excellent for teacher resource creation",
+      "costTrafficLight": "amber"
     },
     {
       "id": "khanmigo",
@@ -101,7 +105,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "green",
       "teacherTrafficLight": "green",
-      "notes": "Strong education guardrails; cost may be barrier for NZ schools"
+      "notes": "Strong education guardrails; cost may be barrier for NZ schools",
+      "costTrafficLight": "red"
     },
     {
       "id": "curipod",
@@ -122,7 +127,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "green",
       "teacherTrafficLight": "green",
-      "notes": "Purpose-built for education; teachers retain control over content"
+      "notes": "Purpose-built for education; teachers retain control over content",
+      "costTrafficLight": "amber"
     },
     {
       "id": "canva",
@@ -143,7 +149,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "green",
       "teacherTrafficLight": "green",
-      "notes": "Education accounts available with enhanced privacy; AI features need guidance around originality"
+      "notes": "Education accounts available with enhanced privacy; AI features need guidance around originality",
+      "costTrafficLight": "amber"
     },
     {
       "id": "grammarly",
@@ -163,7 +170,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "Risk of over-reliance for students; strong tool for teacher professional writing and feedback drafting"
+      "notes": "Risk of over-reliance for students; strong tool for teacher professional writing and feedback drafting",
+      "costTrafficLight": "amber"
     },
     {
       "id": "gemininotebook",
@@ -183,7 +191,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "green",
       "teacherTrafficLight": "green",
-      "notes": "Grounded in user-uploaded documents only; excellent for teacher curriculum planning and resource analysis"
+      "notes": "Grounded in user-uploaded documents only; excellent for teacher curriculum planning and resource analysis",
+      "costTrafficLight": "green"
     },
     {
       "id": "consensus-ai",
@@ -204,7 +213,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "Best for teacher research and professional reading; citation accuracy should be verified"
+      "notes": "Best for teacher research and professional reading; citation accuracy should be verified",
+      "costTrafficLight": "amber"
     },
     {
       "id": "notion-ai",
@@ -225,7 +235,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "No education guardrails; AI features require paid plan; excellent for teacher planning"
+      "notes": "No education guardrails; AI features require paid plan; excellent for teacher planning",
+      "costTrafficLight": "amber"
     },
     {
       "id": "adobe-firefly",
@@ -246,7 +257,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "Licensed training data reduces copyright risk; strong for creating teacher visual resources"
+      "notes": "Licensed training data reduces copyright risk; strong for creating teacher visual resources",
+      "costTrafficLight": "amber"
     },
     {
       "id": "aiva",
@@ -267,7 +279,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "amber",
-      "notes": "Royalty-free output useful for teacher-created video resources; limited English curriculum relevance"
+      "notes": "Royalty-free output useful for teacher-created video resources; limited English curriculum relevance",
+      "costTrafficLight": "amber"
     },
     {
       "id": "artbreeder",
@@ -288,7 +301,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "amber",
-      "notes": "Community content requires moderation; better tools available for teacher visual resource creation"
+      "notes": "Community content requires moderation; better tools available for teacher visual resource creation",
+      "costTrafficLight": "amber"
     },
     {
       "id": "bandlab-songstarter",
@@ -308,7 +322,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "amber",
-      "notes": "Social platform element; limited teacher use case for English curriculum"
+      "notes": "Social platform element; limited teacher use case for English curriculum",
+      "costTrafficLight": "amber"
     },
     {
       "id": "beatoven-ai",
@@ -329,7 +344,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "green",
       "teacherTrafficLight": "green",
-      "notes": "Royalty-free output useful for teacher-created video resources; simple interface"
+      "notes": "Royalty-free output useful for teacher-created video resources; simple interface",
+      "costTrafficLight": "amber"
     },
     {
       "id": "bing-image-creator",
@@ -350,7 +366,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "Free and accessible; useful for generating teacher visual resources and classroom exemplars"
+      "notes": "Free and accessible; useful for generating teacher visual resources and classroom exemplars",
+      "costTrafficLight": "green"
     },
     {
       "id": "boomy",
@@ -370,7 +387,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "amber",
-      "notes": "Distribution features complicate copyright; limited English curriculum relevance for teachers"
+      "notes": "Distribution features complicate copyright; limited English curriculum relevance for teachers",
+      "costTrafficLight": "amber"
     },
     {
       "id": "chatpdf",
@@ -390,7 +408,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "Excellent for teachers analysing curriculum documents, research papers, and policy documents quickly"
+      "notes": "Excellent for teachers analysing curriculum documents, research papers, and policy documents quickly",
+      "costTrafficLight": "amber"
     },
     {
       "id": "smallpdf",
@@ -410,7 +429,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "Useful for teacher document management and quick summary of lengthy policy or curriculum documents"
+      "notes": "Useful for teacher document management and quick summary of lengthy policy or curriculum documents",
+      "costTrafficLight": "amber"
     },
     {
       "id": "wayground-formerly-quizizz",
@@ -431,7 +451,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "green",
       "teacherTrafficLight": "green",
-      "notes": "Education-focused; teacher controls content; strong for formative assessment design"
+      "notes": "Education-focused; teacher controls content; strong for formative assessment design",
+      "costTrafficLight": "amber"
     },
     {
       "id": "cognii",
@@ -451,7 +472,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "Useful for teachers reviewing patterns in student open-ended responses at scale; no free tier"
+      "notes": "Useful for teachers reviewing patterns in student open-ended responses at scale; no free tier",
+      "costTrafficLight": "red"
     },
     {
       "id": "turnitin",
@@ -472,7 +494,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "green",
       "teacherTrafficLight": "green",
-      "notes": "Industry standard in NZ; AI detection feature still evolving; essential teacher tool for academic integrity"
+      "notes": "Industry standard in NZ; AI detection feature still evolving; essential teacher tool for academic integrity",
+      "costTrafficLight": "red"
     },
     {
       "id": "scribendi",
@@ -492,7 +515,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "Paid professional editing service; useful for teachers polishing formal professional documents"
+      "notes": "Paid professional editing service; useful for teachers polishing formal professional documents",
+      "costTrafficLight": "red"
     },
     {
       "id": "textio",
@@ -512,7 +536,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "Excellent for teachers and school leaders drafting job listings, reports, and professional communications"
+      "notes": "Excellent for teachers and school leaders drafting job listings, reports, and professional communications",
+      "costTrafficLight": "red"
     },
     {
       "id": "copilot",
@@ -533,7 +558,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "Microsoft 365 school accounts offer enhanced privacy; strong for teacher planning, report writing, and resource creation"
+      "notes": "Microsoft 365 school accounts offer enhanced privacy; strong for teacher planning, report writing, and resource creation",
+      "costTrafficLight": "amber"
     },
     {
       "id": "craiyon",
@@ -554,7 +580,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "amber",
-      "notes": "Limited content filtering; output quality variable; limited teacher use case with better free alternatives available"
+      "notes": "Limited content filtering; output quality variable; limited teacher use case with better free alternatives available",
+      "costTrafficLight": "amber"
     },
     {
       "id": "yippity",
@@ -574,7 +601,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "Quick and easy for teachers to generate formative quiz questions from any text; teacher should review for accuracy"
+      "notes": "Quick and easy for teachers to generate formative quiz questions from any text; teacher should review for accuracy",
+      "costTrafficLight": "amber"
     },
     {
       "id": "scispace",
@@ -595,7 +623,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "Excellent for teachers keeping up with research literature; citation support useful for professional reading"
+      "notes": "Excellent for teachers keeping up with research literature; citation support useful for professional reading",
+      "costTrafficLight": "amber"
     },
     {
       "id": "to-teach",
@@ -616,7 +645,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "green",
       "teacherTrafficLight": "green",
-      "notes": "Purpose-built for educators; strong for rapid lesson planning and differentiation"
+      "notes": "Purpose-built for educators; strong for rapid lesson planning and differentiation",
+      "costTrafficLight": "amber"
     },
     {
       "id": "gemini",
@@ -637,7 +667,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "Google account required; strong for teacher planning, resource creation, and professional development"
+      "notes": "Google account required; strong for teacher planning, resource creation, and professional development",
+      "costTrafficLight": "amber"
     },
     {
       "id": "ibm-watson",
@@ -657,7 +688,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "amber",
-      "notes": "Enterprise tool; high technical complexity; limited use case for English teachers specifically"
+      "notes": "Enterprise tool; high technical complexity; limited use case for English teachers specifically",
+      "costTrafficLight": "amber"
     },
     {
       "id": "fireflies",
@@ -677,7 +709,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "Excellent for teachers transcribing meetings, professional development sessions, and parent interviews"
+      "notes": "Excellent for teachers transcribing meetings, professional development sessions, and parent interviews",
+      "costTrafficLight": "amber"
     },
     {
       "id": "parlay",
@@ -697,7 +730,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "green",
       "teacherTrafficLight": "green",
-      "notes": "Purpose-built for classroom discussion; strong for oral language tasks; teacher controls discussion parameters"
+      "notes": "Purpose-built for classroom discussion; strong for oral language tasks; teacher controls discussion parameters",
+      "costTrafficLight": "amber"
     },
     {
       "id": "perplexity",
@@ -718,7 +752,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "Excellent for teacher research; citations more transparent than ChatGPT"
+      "notes": "Excellent for teacher research; citations more transparent than ChatGPT",
+      "costTrafficLight": "amber"
     },
     {
       "id": "prowritingaid",
@@ -738,7 +773,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "More detailed than Grammarly for style analysis; useful for teachers analysing professional writing"
+      "notes": "More detailed than Grammarly for style analysis; useful for teachers analysing professional writing",
+      "costTrafficLight": "amber"
     },
     {
       "id": "q-chat-quizlet",
@@ -758,7 +794,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "green",
       "teacherTrafficLight": "green",
-      "notes": "Strong for teacher-created vocabulary and text study sets; well-established NZ school use"
+      "notes": "Strong for teacher-created vocabulary and text study sets; well-established NZ school use",
+      "costTrafficLight": "amber"
     },
     {
       "id": "quillbot",
@@ -778,7 +815,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "red",
       "teacherTrafficLight": "green",
-      "notes": "High student misuse risk for academic dishonesty; useful for teachers generating paraphrase exemplars"
+      "notes": "High student misuse risk for academic dishonesty; useful for teachers generating paraphrase exemplars",
+      "costTrafficLight": "amber"
     },
     {
       "id": "boodlebox-ai",
@@ -799,7 +837,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "green",
       "teacherTrafficLight": "green",
-      "notes": "Purpose-built for education; teacher controls AI parameters; excellent for structured AI literacy tasks"
+      "notes": "Purpose-built for education; teacher controls AI parameters; excellent for structured AI literacy tasks",
+      "costTrafficLight": "amber"
     },
     {
       "id": "final-round-ai",
@@ -819,7 +858,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "Useful for oral preparation and speech practice; data stored commercially"
+      "notes": "Useful for oral preparation and speech practice; data stored commercially",
+      "costTrafficLight": "amber"
     },
     {
       "id": "microsoft-editor",
@@ -839,7 +879,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "green",
       "teacherTrafficLight": "green",
-      "notes": "Integrated into Microsoft 365 school accounts; useful for teacher professional writing and student editing support"
+      "notes": "Integrated into Microsoft 365 school accounts; useful for teacher professional writing and student editing support",
+      "costTrafficLight": "amber"
     },
     {
       "id": "midjourney",
@@ -860,7 +901,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "red",
       "teacherTrafficLight": "green",
-      "notes": "Highest quality AI image generation; excellent for teachers creating visual resources; not for student use"
+      "notes": "Highest quality AI image generation; excellent for teachers creating visual resources; not for student use",
+      "costTrafficLight": "red"
     },
     {
       "id": "packback",
@@ -880,7 +922,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "Education-focused; strong for discussion-based learning; no free tier"
+      "notes": "Education-focused; strong for discussion-based learning; no free tier",
+      "costTrafficLight": "red"
     },
     {
       "id": "suno-ai",
@@ -901,7 +944,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "amber",
-      "notes": "Copyright ownership of generated songs contested; limited English curriculum relevance"
+      "notes": "Copyright ownership of generated songs contested; limited English curriculum relevance",
+      "costTrafficLight": "amber"
     },
     {
       "id": "nightcafe",
@@ -922,7 +966,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "amber",
-      "notes": "Community gallery requires moderation; better teacher image generation tools available"
+      "notes": "Community gallery requires moderation; better teacher image generation tools available",
+      "costTrafficLight": "amber"
     },
     {
       "id": "dreamstudio",
@@ -943,7 +988,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "amber",
-      "notes": "Credit-based system; copyright concerns with training data; better licensed alternatives available"
+      "notes": "Credit-based system; copyright concerns with training data; better licensed alternatives available",
+      "costTrafficLight": "amber"
     },
     {
       "id": "teacher-s-buddy",
@@ -964,7 +1010,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "green",
       "teacherTrafficLight": "green",
-      "notes": "NZ-founded and NZ curriculum-aligned; PPTA-endorsed; 12,000+ teachers globally; strong for reducing teacher workload while staying NCEA-relevant"
+      "notes": "NZ-founded and NZ curriculum-aligned; PPTA-endorsed; 12,000+ teachers globally; strong for reducing teacher workload while staying NCEA-relevant",
+      "costTrafficLight": "amber"
     },
     {
       "id": "writer-s-toolbox",
@@ -984,7 +1031,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "green",
       "teacherTrafficLight": "green",
-      "notes": "NZ-developed; ERO-endorsed results showing double the writing effect scores in NZ schools; not generative AI - analyses and guides rather than produces content; strong academic integrity profile"
+      "notes": "NZ-developed; ERO-endorsed results showing double the writing effect scores in NZ schools; not generative AI - analyses and guides rather than produces content; strong academic integrity profile",
+      "costTrafficLight": "red"
     },
     {
       "id": "brisk",
@@ -1005,7 +1053,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "Works inside existing Google Workspace tools; strong for whole-class feedback at scale; recommended at NZ teacher PD workshops"
+      "notes": "Works inside existing Google Workspace tools; strong for whole-class feedback at scale; recommended at NZ teacher PD workshops",
+      "costTrafficLight": "amber"
     },
     {
       "id": "snorkl",
@@ -1026,7 +1075,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "green",
       "teacherTrafficLight": "green",
-      "notes": "Supports multilingual learners in 40+ languages; strong for NZ diverse classrooms; teacher gets real-time misconception data; mentioned in NZ PD workshops"
+      "notes": "Supports multilingual learners in 40+ languages; strong for NZ diverse classrooms; teacher gets real-time misconception data; mentioned in NZ PD workshops",
+      "costTrafficLight": "amber"
     },
     {
       "id": "flow21",
@@ -1047,7 +1097,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "green",
-      "notes": "Featured in Wellington NZ teacher AI workshops; NZ curriculum prompt library available; good for rapid resource generation"
+      "notes": "Featured in Wellington NZ teacher AI workshops; NZ curriculum prompt library available; good for rapid resource generation",
+      "costTrafficLight": "amber"
     },
     {
       "id": "school-ai",
@@ -1068,7 +1119,8 @@
       "yearLevel": "9-13",
       "studentTrafficLight": "green",
       "teacherTrafficLight": "green",
-      "notes": "Strong education guardrails and teacher monitoring; recommended in NZ Education Group PD workshops alongside Curipod and GeminiNotebook; excellent for supervised student AI use"
+      "notes": "Strong education guardrails and teacher monitoring; recommended in NZ Education Group PD workshops alongside Curipod and GeminiNotebook; excellent for supervised student AI use",
+      "costTrafficLight": "amber"
     },
     {
       "id": "grok",
@@ -1089,7 +1141,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "amber",
-      "notes": "No education-specific guardrails; data privacy less established than Microsoft/Google alternatives; included in NZ teacher AI workshops as a frontier LLM to know about"
+      "notes": "No education-specific guardrails; data privacy less established than Microsoft/Google alternatives; included in NZ teacher AI workshops as a frontier LLM to know about",
+      "costTrafficLight": "amber"
     },
     {
       "id": "meta-ai",
@@ -1110,7 +1163,8 @@
       "yearLevel": "11-13",
       "studentTrafficLight": "amber",
       "teacherTrafficLight": "amber",
-      "notes": "No education guardrails; Meta data privacy practices a concern for student use; included in NZ teacher AI workshops as a frontier LLM; better alternatives available for classroom use"
+      "notes": "No education guardrails; Meta data privacy practices a concern for student use; included in NZ teacher AI workshops as a frontier LLM; better alternatives available for classroom use",
+      "costTrafficLight": "green"
     }
   ]
 }

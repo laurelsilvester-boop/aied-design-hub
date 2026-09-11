@@ -68,6 +68,7 @@ function renderCards(tools) {
         ${trafficItem('Student', tool.studentTrafficLight, tool.notes)}
         ${trafficItem('Teacher', tool.teacherTrafficLight, tool.notes)}
         ${trafficItem('Accessibility', accessibilityRating(tool.accessibility), tool.notes)}
+        ${trafficItem('Cost', tool.costTrafficLight, tool.cost)}
       </div>
       <div class="card-footer">
         <a

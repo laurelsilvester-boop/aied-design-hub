@@ -73,16 +73,26 @@ h1 {
   padding: 1.25rem 1.5rem 0;
 }
 
-.disclaimer-inner {
+.disclaimer-inner,
+.info-inner {
   max-width: 880px;
   margin: 0 auto;
-  background: #fff0f8;
-  border-left: 4px solid var(--accent);
   border-radius: 8px;
   padding: 0.85rem 1.1rem;
 }
 
-.disclaimer-inner p {
+.disclaimer-inner {
+  background: #fff0f8;
+  border-left: 4px solid var(--accent);
+}
+
+.info-inner {
+  background: #eef9f1;
+  border-left: 4px solid var(--green);
+}
+
+.disclaimer-inner p,
+.info-inner p {
   font-size: 0.85rem;
   line-height: 1.55;
   color: var(--text-muted);
