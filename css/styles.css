@@ -67,6 +67,27 @@ h1 {
   max-width: 62ch;
 }
 
+/* === Disclaimer banner === */
+.disclaimer-banner {
+  background: var(--bg);
+  padding: 1.25rem 1.5rem 0;
+}
+
+.disclaimer-inner {
+  max-width: 880px;
+  margin: 0 auto;
+  background: #fff0f8;
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 0.85rem 1.1rem;
+}
+
+.disclaimer-inner p {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
 /* === Controls === */
 .controls {
   background: var(--bg);
