@@ -3,182 +3,1114 @@
     {
       "id": "magicschool-ai",
       "name": "MagicSchool AI",
-      "url": "https://www.magicschool.ai",
-      "category": "Lesson Planning",
-      "description": "An AI suite built for teachers, with 60+ tools covering lesson planning, differentiation, report writing, and student feedback. Widely used in NZ schools.",
-      "tags": ["lesson planning", "differentiation", "feedback", "rubric", "report writing", "NZ"],
-      "ratings": {
-        "cost": "green",
-        "privacy": "amber",
-        "guardrails": "green",
-        "accessibility": "amber"
-      },
-      "notes": {
-        "cost": "Free for teachers. Paid plans add extra features but the free tier is substantial.",
-        "privacy": "US-based. Claims FERPA and COPPA compliance. Review their student data policy before use with under-18s.",
-        "guardrails": "Built specifically for education. Content is curriculum-appropriate throughout.",
-        "accessibility": "Functional but not fully WCAG 2.1 AA certified."
-      }
+      "url": "https://magicschool.ai",
+      "description": "AI tools for teachers including lesson planning, rubric creation, and differentiation.",
+      "category": "Teacher Productivity",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "Yes - education platform",
+      "accessibility": "High",
+      "nzRelevance": "General curriculum support, assessment design",
+      "subjectTags": [
+        "English",
+        "Humanities"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "green",
+      "teacherTrafficLight": "green",
+      "notes": "US-based, check data storage"
     },
     {
       "id": "diffit",
       "name": "Diffit",
       "url": "https://diffit.me",
-      "category": "Differentiation",
-      "description": "Generates differentiated reading materials at any level from a URL, topic, or your own text. Particularly useful for adapting complex texts for diverse learners.",
-      "tags": ["differentiation", "reading", "scaffolding", "accessibility", "reading levels"],
-      "ratings": {
-        "cost": "amber",
-        "privacy": "amber",
-        "guardrails": "green",
-        "accessibility": "amber"
-      },
-      "notes": {
-        "cost": "Free tier available with usage limits. Paid plans from around $10/month.",
-        "privacy": "US-based. Limited transparency in privacy policy. Avoid entering personally identifiable student information.",
-        "guardrails": "Content is focused on curriculum adaptation. Output is appropriate for classroom use.",
-        "accessibility": "Basic interface. Screen reader support is limited."
-      }
+      "description": "Generates differentiated reading materials and comprehension activities at adjustable reading levels.",
+      "category": "Student Learning",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "Partial",
+      "accessibility": "High",
+      "nzRelevance": "Reading comprehension, differentiation, text study",
+      "subjectTags": [
+        "English"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "US-based; teacher should review outputs before sharing with students"
     },
     {
       "id": "chatgpt",
       "name": "ChatGPT",
       "url": "https://chat.openai.com",
-      "category": "General AI",
-      "description": "OpenAI's general-purpose AI assistant. Highly capable for brainstorming, drafting, and explanation. Not designed specifically for education, so requires teacher guidance on appropriate use.",
-      "tags": ["writing", "brainstorming", "explanation", "general AI", "drafting"],
-      "ratings": {
-        "cost": "amber",
-        "privacy": "amber",
-        "guardrails": "amber",
-        "accessibility": "green"
-      },
-      "notes": {
-        "cost": "Free plan available. ChatGPT Plus is $20/month. ChatGPT Edu plans exist for institutions.",
-        "privacy": "US-based. Conversations may be used for model training unless opted out. Not FERPA/COPPA compliant without a specific education agreement.",
-        "guardrails": "Content filters exist but this is a general-purpose tool. Needs explicit classroom norms to support responsible use.",
-        "accessibility": "Good WCAG 2.1 AA compliance. Works well with screen readers."
-      }
+      "description": "General-purpose AI assistant for writing, research, brainstorming, and language tasks.",
+      "category": "Writing / Research",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Low",
+      "guardrails": "Partial",
+      "accessibility": "Medium",
+      "nzRelevance": "Creative writing, research, essay drafting, oral prep",
+      "subjectTags": [
+        "English",
+        "All subjects"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "No education guardrails on free tier; data used for training by default; best with explicit teacher guidance"
     },
     {
       "id": "claude-ai",
       "name": "Claude.ai",
       "url": "https://claude.ai",
-      "category": "General AI",
-      "description": "Anthropic's AI assistant. Strong at nuanced writing, analysis, and reasoning. Notably strong privacy defaults compared to other general AI tools.",
-      "tags": ["writing", "analysis", "reasoning", "general AI", "privacy"],
-      "ratings": {
-        "cost": "amber",
-        "privacy": "green",
-        "guardrails": "amber",
-        "accessibility": "green"
-      },
-      "notes": {
-        "cost": "Free plan available. Claude Pro is $20/month. Free tier has usage limits.",
-        "privacy": "Conversations are not used for model training by default. Strong privacy stance from Anthropic.",
-        "guardrails": "Strong safety training but a general-purpose tool. Establish clear classroom norms for student use.",
-        "accessibility": "Good accessibility. Clean interface works well with assistive technology."
-      }
+      "description": "AI assistant known for nuanced writing support, analysis, and thoughtful long-form responses.",
+      "category": "Writing / Research",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "Partial",
+      "accessibility": "Medium",
+      "nzRelevance": "Essay writing, text analysis, close reading support, oral preparation",
+      "subjectTags": [
+        "English"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "No student-specific guardrails; strong on reasoning and writing quality; excellent for teacher resource creation"
     },
     {
       "id": "khanmigo",
       "name": "Khanmigo",
-      "url": "https://www.khanacademy.org/khan-labs",
-      "category": "Tutoring",
-      "description": "Khan Academy's AI tutor. Uses Socratic questioning rather than giving direct answers, making it a strong model for learning. Education guardrails are the strongest of any tool here.",
-      "tags": ["tutoring", "Socratic", "student-facing", "maths", "writing", "safe"],
-      "ratings": {
-        "cost": "amber",
-        "privacy": "green",
-        "guardrails": "green",
-        "accessibility": "green"
-      },
-      "notes": {
-        "cost": "Free for teachers via Khan Academy. Student access requires a subscription ($9/month) unless income-qualified.",
-        "privacy": "COPPA and FERPA compliant. Strong data protection policies. One of the safest options for student data.",
-        "guardrails": "Purpose-built for education. Refuses to do homework for students, uses guided questioning instead.",
-        "accessibility": "Khan Academy has strong accessibility standards. Works well with screen readers and keyboard navigation."
-      }
+      "url": "https://www.khanacademy.org/khanmigo",
+      "description": "AI tutoring assistant designed to guide students through questions rather than give direct answers.",
+      "category": "Student Learning",
+      "cost": "Paid",
+      "freeTier": false,
+      "privacyRating": "High",
+      "guardrails": "Yes - education platform",
+      "accessibility": "High",
+      "nzRelevance": "Literacy support, reading comprehension, writing feedback",
+      "subjectTags": [
+        "English",
+        "All subjects"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "green",
+      "teacherTrafficLight": "green",
+      "notes": "Strong education guardrails; cost may be barrier for NZ schools"
     },
     {
       "id": "curipod",
       "name": "Curipod",
       "url": "https://curipod.com",
-      "category": "Lesson Planning",
-      "description": "Generates interactive lessons with polls, word clouds, and drawing activities. Good for discussion and formative assessment hooks.",
-      "tags": ["interactive lessons", "engagement", "polls", "formative assessment", "discussion"],
-      "ratings": {
-        "cost": "green",
-        "privacy": "amber",
-        "guardrails": "green",
-        "accessibility": "amber"
-      },
-      "notes": {
-        "cost": "Free for educators. Generous free tier.",
-        "privacy": "European company, GDPR compliant. Student responses are collected and stored. Review data retention settings.",
-        "guardrails": "Education platform with moderated content. Appropriate for classroom use.",
-        "accessibility": "Interactive elements may present challenges for some assistive technologies."
-      }
+      "description": "Creates interactive lessons, polls, and slides with AI-generated content for classroom use.",
+      "category": "Teacher Productivity",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "Yes - education platform",
+      "accessibility": "High",
+      "nzRelevance": "Lesson design, classroom discussion, engagement activities",
+      "subjectTags": [
+        "English",
+        "All subjects"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "green",
+      "teacherTrafficLight": "green",
+      "notes": "Purpose-built for education; teachers retain control over content"
     },
     {
       "id": "canva",
       "name": "Canva",
       "url": "https://www.canva.com",
+      "description": "Design platform with AI features for creating visual content, presentations, and multimodal texts.",
       "category": "Creative",
-      "description": "Design platform with strong AI features including image generation, text-to-presentation, and Magic Write. Free Education plan available for verified teachers and students.",
-      "tags": ["design", "visual", "presentation", "image generation", "creative", "NZ"],
-      "ratings": {
-        "cost": "green",
-        "privacy": "amber",
-        "guardrails": "amber",
-        "accessibility": "green"
-      },
-      "notes": {
-        "cost": "Education plan is free for verified teachers and students (Canva for Education).",
-        "privacy": "Australian company (listed in US). Data used for product improvement. Opt-out options are limited.",
-        "guardrails": "Content filters on AI image generation but it is a general-use platform. Image generation can produce unexpected results.",
-        "accessibility": "Strong accessibility features. Good screen reader support and keyboard navigation."
-      }
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "Partial",
+      "accessibility": "High",
+      "nzRelevance": "Visual language, multimodal texts, creative writing presentation, media studies",
+      "subjectTags": [
+        "English",
+        "Media Studies"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "green",
+      "teacherTrafficLight": "green",
+      "notes": "Education accounts available with enhanced privacy; AI features need guidance around originality"
     },
     {
       "id": "grammarly",
       "name": "Grammarly",
       "url": "https://www.grammarly.com",
-      "category": "Writing Support",
-      "description": "AI writing assistant for grammar, clarity, and style suggestions. The free tier is useful for polishing student writing. Honest limitation: it focuses on surface-level language, not ideas.",
-      "tags": ["writing", "grammar", "editing", "feedback", "English"],
-      "ratings": {
-        "cost": "amber",
-        "privacy": "amber",
-        "guardrails": "green",
-        "accessibility": "amber"
-      },
-      "notes": {
-        "cost": "Free tier covers grammar and basic suggestions. Pro is $30/month. Education plans available.",
-        "privacy": "US-based. Text is sent to Grammarly servers for processing. Review privacy settings before using with student writing.",
-        "guardrails": "Writing assistance only. Does not generate harmful content. Safe scope of use.",
-        "accessibility": "Browser extension works well but the standalone app has some accessibility gaps."
-      }
+      "description": "AI writing assistant that checks grammar, tone, clarity, and style in real time.",
+      "category": "Writing",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "Partial",
+      "accessibility": "High",
+      "nzRelevance": "Writing accuracy, editing, proofreading, formal writing conventions",
+      "subjectTags": [
+        "English"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "Risk of over-reliance for students; strong tool for teacher professional writing and feedback drafting"
     },
     {
-      "id": "notebooklm",
-      "name": "NotebookLM",
+      "id": "gemininotebook",
+      "name": "GeminiNotebook",
       "url": "https://notebooklm.google.com",
+      "description": "AI research tool that lets users upload documents and ask questions, generate summaries, and create audio overviews from their own sources.",
       "category": "Research",
-      "description": "Google's AI research tool that lets you upload documents and ask questions of them. Useful for helping students analyse texts or for teachers synthesising research. Audio overview feature generates podcast-style summaries.",
-      "tags": ["research", "documents", "analysis", "reading", "synthesis", "podcast"],
-      "ratings": {
-        "cost": "green",
-        "privacy": "amber",
-        "guardrails": "amber",
-        "accessibility": "green"
-      },
-      "notes": {
-        "cost": "Free to use with a Google account.",
-        "privacy": "Subject to Google's standard data policies. Use Google Workspace for Education accounts for stronger student data protections.",
-        "guardrails": "Grounded in the documents you upload, which reduces hallucination risk. Still a general-purpose tool.",
-        "accessibility": "Google's standard accessibility, which is generally strong."
-      }
+      "cost": "Free",
+      "freeTier": true,
+      "privacyRating": "High",
+      "guardrails": "Partial",
+      "accessibility": "Medium",
+      "nzRelevance": "Research skills, source analysis, extended texts, Level 3 internals",
+      "subjectTags": [
+        "English"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "green",
+      "teacherTrafficLight": "green",
+      "notes": "Grounded in user-uploaded documents only; excellent for teacher curriculum planning and resource analysis"
+    },
+    {
+      "id": "consensus-ai",
+      "name": "Consensus AI",
+      "url": "https://consensus.app",
+      "description": "AI-powered search engine that finds and summarises findings across peer-reviewed academic papers.",
+      "category": "Research",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "Partial",
+      "accessibility": "Medium",
+      "nzRelevance": "Research skills, source evaluation, evidence-based writing, Level 3 internals",
+      "subjectTags": [
+        "English",
+        "Science"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "Best for teacher research and professional reading; citation accuracy should be verified"
+    },
+    {
+      "id": "notion-ai",
+      "name": "Notion AI",
+      "url": "https://notion.so",
+      "description": "Productivity and note-taking workspace with built-in AI for summarising, drafting, and organising content.",
+      "category": "Teacher Productivity",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "No",
+      "accessibility": "High",
+      "nzRelevance": "Planning, organisation, research documentation",
+      "subjectTags": [
+        "English",
+        "All subjects"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "No education guardrails; AI features require paid plan; excellent for teacher planning"
+    },
+    {
+      "id": "adobe-firefly",
+      "name": "Adobe Firefly",
+      "url": "https://firefly.adobe.com",
+      "description": "AI image generation tool by Adobe, trained on licensed content, for creating original visual artwork.",
+      "category": "Image Generation",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "Partial",
+      "accessibility": "Medium",
+      "nzRelevance": "Visual language, multimodal text creation, media studies",
+      "subjectTags": [
+        "English",
+        "Media Studies"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "Licensed training data reduces copyright risk; strong for creating teacher visual resources"
+    },
+    {
+      "id": "aiva",
+      "name": "AIVA",
+      "url": "https://www.aiva.ai",
+      "description": "AI music composition tool that generates original royalty-free music in various styles.",
+      "category": "Music Composition",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "High",
+      "guardrails": "No",
+      "accessibility": "Low",
+      "nzRelevance": "Creative arts; limited direct NZ English relevance",
+      "subjectTags": [
+        "Music",
+        "Arts"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "amber",
+      "notes": "Royalty-free output useful for teacher-created video resources; limited English curriculum relevance"
+    },
+    {
+      "id": "artbreeder",
+      "name": "Artbreeder",
+      "url": "https://www.artbreeder.com",
+      "description": "Collaborative AI image generation tool that blends and evolves images using community-shared models.",
+      "category": "Image Generation",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "No",
+      "accessibility": "Low",
+      "nzRelevance": "Visual language, creative exploration",
+      "subjectTags": [
+        "English",
+        "Arts"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "amber",
+      "notes": "Community content requires moderation; better tools available for teacher visual resource creation"
+    },
+    {
+      "id": "bandlab-songstarter",
+      "name": "BandLab SongStarter",
+      "url": "https://www.bandlab.com",
+      "description": "AI-powered music creation tool integrated into a social music platform for composing and sharing tracks.",
+      "category": "Music Composition",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "No",
+      "accessibility": "Low",
+      "nzRelevance": "Creative arts; limited NZ English curriculum relevance",
+      "subjectTags": [
+        "Music"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "amber",
+      "notes": "Social platform element; limited teacher use case for English curriculum"
+    },
+    {
+      "id": "beatoven-ai",
+      "name": "Beatoven.ai",
+      "url": "https://www.beatoven.ai",
+      "description": "AI tool that generates royalty-free background music tailored to mood and genre selections.",
+      "category": "Music Composition",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "High",
+      "guardrails": "No",
+      "accessibility": "Low",
+      "nzRelevance": "Limited direct NZ English curriculum relevance",
+      "subjectTags": [
+        "Music",
+        "Arts"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "green",
+      "teacherTrafficLight": "green",
+      "notes": "Royalty-free output useful for teacher-created video resources; simple interface"
+    },
+    {
+      "id": "bing-image-creator",
+      "name": "Bing Image Creator",
+      "url": "https://www.bing.com/images/create",
+      "description": "Microsoft AI image generation tool powered by DALL-E, accessible via browser with a Microsoft account.",
+      "category": "Image Generation",
+      "cost": "Free",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "Partial",
+      "accessibility": "High",
+      "nzRelevance": "Visual language, multimodal texts, creative writing illustration",
+      "subjectTags": [
+        "English",
+        "Media Studies"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "Free and accessible; useful for generating teacher visual resources and classroom exemplars"
+    },
+    {
+      "id": "boomy",
+      "name": "Boomy",
+      "url": "https://www.boomy.com",
+      "description": "AI music generation platform that creates and distributes original songs with minimal music knowledge required.",
+      "category": "Music Composition",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "No",
+      "accessibility": "Low",
+      "nzRelevance": "Limited NZ English curriculum relevance",
+      "subjectTags": [
+        "Music"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "amber",
+      "notes": "Distribution features complicate copyright; limited English curriculum relevance for teachers"
+    },
+    {
+      "id": "chatpdf",
+      "name": "ChatPDF",
+      "url": "https://www.chatpdf.com",
+      "description": "AI tool that lets users upload PDFs and ask questions about the content, generating summaries and answers.",
+      "category": "Document Analysis",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "No",
+      "accessibility": "High",
+      "nzRelevance": "Reading comprehension, text analysis, research skills, Level 3 extended texts",
+      "subjectTags": [
+        "English"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "Excellent for teachers analysing curriculum documents, research papers, and policy documents quickly"
+    },
+    {
+      "id": "smallpdf",
+      "name": "SmallPDF",
+      "url": "https://smallpdf.com/ai-pdf",
+      "description": "PDF management and AI tool for summarising, editing, and interacting with PDF documents.",
+      "category": "Document Analysis",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "No",
+      "accessibility": "Medium",
+      "nzRelevance": "Research skills, document analysis, text interaction",
+      "subjectTags": [
+        "English"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "Useful for teacher document management and quick summary of lengthy policy or curriculum documents"
+    },
+    {
+      "id": "wayground-formerly-quizizz",
+      "name": "Wayground (formerly Quizizz)",
+      "url": "https://wayground.com",
+      "description": "AI-enhanced assessment and quiz platform for creating and delivering interactive classroom quizzes.",
+      "category": "Assessment",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "Yes - education platform",
+      "accessibility": "High",
+      "nzRelevance": "Formative assessment, vocabulary, comprehension checks",
+      "subjectTags": [
+        "English",
+        "All subjects"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "green",
+      "teacherTrafficLight": "green",
+      "notes": "Education-focused; teacher controls content; strong for formative assessment design"
+    },
+    {
+      "id": "cognii",
+      "name": "Cognii",
+      "url": "https://www.cognii.com",
+      "description": "AI assessment tool using natural language processing to evaluate open-ended student responses.",
+      "category": "Assessment",
+      "cost": "Paid",
+      "freeTier": false,
+      "privacyRating": "Medium",
+      "guardrails": "Yes - education platform",
+      "accessibility": "Medium",
+      "nzRelevance": "Writing assessment, open-ended response evaluation",
+      "subjectTags": [
+        "English"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "Useful for teachers reviewing patterns in student open-ended responses at scale; no free tier"
+    },
+    {
+      "id": "turnitin",
+      "name": "Turnitin",
+      "url": "https://www.turnitin.com",
+      "description": "Academic integrity and AI detection platform used to check student work for plagiarism and AI-generated content.",
+      "category": "Plagiarism Detection",
+      "cost": "Paid",
+      "freeTier": false,
+      "privacyRating": "Medium",
+      "guardrails": "Yes - education platform",
+      "accessibility": "High",
+      "nzRelevance": "Academic integrity, writing authenticity, assessment",
+      "subjectTags": [
+        "English",
+        "All subjects"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "green",
+      "teacherTrafficLight": "green",
+      "notes": "Industry standard in NZ; AI detection feature still evolving; essential teacher tool for academic integrity"
+    },
+    {
+      "id": "scribendi",
+      "name": "Scribendi",
+      "url": "https://www.scribendi.ai",
+      "description": "Professional editing and proofreading service with AI-assisted grammar and style checking.",
+      "category": "Writing",
+      "cost": "Paid",
+      "freeTier": false,
+      "privacyRating": "Medium",
+      "guardrails": "No",
+      "accessibility": "Medium",
+      "nzRelevance": "Writing accuracy, editing, proofreading",
+      "subjectTags": [
+        "English"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "Paid professional editing service; useful for teachers polishing formal professional documents"
+    },
+    {
+      "id": "textio",
+      "name": "Textio",
+      "url": "https://textio.com/ai",
+      "description": "AI writing tool focused on inclusive language and bias reduction in professional and workplace writing.",
+      "category": "Writing",
+      "cost": "Paid",
+      "freeTier": false,
+      "privacyRating": "Medium",
+      "guardrails": "No",
+      "accessibility": "Low",
+      "nzRelevance": "Limited NZ English curriculum relevance; professional writing context",
+      "subjectTags": [
+        "English"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "Excellent for teachers and school leaders drafting job listings, reports, and professional communications"
+    },
+    {
+      "id": "copilot",
+      "name": "Copilot",
+      "url": "https://copilot.microsoft.com",
+      "description": "Microsoft AI assistant integrated with Microsoft 365, providing writing, research, and productivity support.",
+      "category": "Chatbot / Writing",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "Partial",
+      "accessibility": "High",
+      "nzRelevance": "Writing, research, essay planning, document analysis",
+      "subjectTags": [
+        "English",
+        "All subjects"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "Microsoft 365 school accounts offer enhanced privacy; strong for teacher planning, report writing, and resource creation"
+    },
+    {
+      "id": "craiyon",
+      "name": "Craiyon",
+      "url": "https://www.craiyon.com",
+      "description": "Free AI image generation tool (formerly DALL-E mini) for creating images from text prompts.",
+      "category": "Image Generation",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "No",
+      "accessibility": "Low",
+      "nzRelevance": "Visual language exploration; limited curriculum relevance",
+      "subjectTags": [
+        "English",
+        "Arts"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "amber",
+      "notes": "Limited content filtering; output quality variable; limited teacher use case with better free alternatives available"
+    },
+    {
+      "id": "yippity",
+      "name": "Yippity",
+      "url": "https://yippity.io",
+      "description": "AI tool that converts text or URLs into quiz questions automatically for study and review.",
+      "category": "Assessment",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "No",
+      "accessibility": "High",
+      "nzRelevance": "Comprehension checking, vocabulary review, text study",
+      "subjectTags": [
+        "English"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "Quick and easy for teachers to generate formative quiz questions from any text; teacher should review for accuracy"
+    },
+    {
+      "id": "scispace",
+      "name": "SciSpace",
+      "url": "https://scispace.com",
+      "description": "AI research assistant for reading, understanding, and summarising academic papers with citation support.",
+      "category": "Research",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "No",
+      "accessibility": "Medium",
+      "nzRelevance": "Research skills, source evaluation, academic writing, Level 3 internals",
+      "subjectTags": [
+        "English",
+        "Science"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "Excellent for teachers keeping up with research literature; citation support useful for professional reading"
+    },
+    {
+      "id": "to-teach",
+      "name": "To Teach",
+      "url": "https://to-teach.ai",
+      "description": "AI lesson planning tool designed for teachers to generate curriculum-aligned activities and resources.",
+      "category": "Teacher Productivity",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "Yes - education platform",
+      "accessibility": "High",
+      "nzRelevance": "Lesson planning, activity generation, curriculum alignment",
+      "subjectTags": [
+        "English",
+        "All subjects"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "green",
+      "teacherTrafficLight": "green",
+      "notes": "Purpose-built for educators; strong for rapid lesson planning and differentiation"
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "url": "https://gemini.google.com",
+      "description": "Google AI assistant for writing, research, creative tasks, and multimodal content generation.",
+      "category": "Chatbot",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "Partial",
+      "accessibility": "High",
+      "nzRelevance": "Writing, research, brainstorming, creative generation",
+      "subjectTags": [
+        "English",
+        "All subjects"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "Google account required; strong for teacher planning, resource creation, and professional development"
+    },
+    {
+      "id": "ibm-watson",
+      "name": "IBM Watson",
+      "url": "https://www.ibm.com/watsonx",
+      "description": "Enterprise AI platform for building and deploying AI models and workflows at organisational scale.",
+      "category": "AI Building",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "High",
+      "guardrails": "No",
+      "accessibility": "Low",
+      "nzRelevance": "Limited NZ secondary English curriculum relevance",
+      "subjectTags": [
+        "Technology"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "amber",
+      "notes": "Enterprise tool; high technical complexity; limited use case for English teachers specifically"
+    },
+    {
+      "id": "fireflies",
+      "name": "Fireflies",
+      "url": "https://fireflies.ai",
+      "description": "AI meeting transcription and note-taking tool that records, transcribes, and summarises audio conversations.",
+      "category": "Transcription",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "No",
+      "accessibility": "Medium",
+      "nzRelevance": "Oral language, interview transcription, listening tasks",
+      "subjectTags": [
+        "English"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "Excellent for teachers transcribing meetings, professional development sessions, and parent interviews"
+    },
+    {
+      "id": "parlay",
+      "name": "Parlay",
+      "url": "https://parlayideas.com",
+      "description": "Education platform for facilitating structured academic discussions and Socratic seminars with AI support.",
+      "category": "Education Technology",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "High",
+      "guardrails": "Yes - education platform",
+      "accessibility": "High",
+      "nzRelevance": "Oral language, structured discussion, critical thinking, Socratic seminar",
+      "subjectTags": [
+        "English"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "green",
+      "teacherTrafficLight": "green",
+      "notes": "Purpose-built for classroom discussion; strong for oral language tasks; teacher controls discussion parameters"
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "url": "https://www.perplexity.ai",
+      "description": "AI search engine that answers questions with cited sources, providing real-time web-grounded responses.",
+      "category": "Research / Search",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "No",
+      "accessibility": "High",
+      "nzRelevance": "Research skills, source evaluation, information literacy",
+      "subjectTags": [
+        "English",
+        "All subjects"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "Excellent for teacher research; citations more transparent than ChatGPT"
+    },
+    {
+      "id": "prowritingaid",
+      "name": "ProWritingAid",
+      "url": "https://prowritingaid.com",
+      "description": "AI writing tool offering in-depth grammar, style, readability, and structural analysis for longer documents.",
+      "category": "Writing",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "No",
+      "accessibility": "High",
+      "nzRelevance": "Writing accuracy, style development, essay editing, formal writing",
+      "subjectTags": [
+        "English"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "More detailed than Grammarly for style analysis; useful for teachers analysing professional writing"
+    },
+    {
+      "id": "q-chat-quizlet",
+      "name": "Q-Chat (Quizlet)",
+      "url": "https://quizlet.com",
+      "description": "AI-powered study tool integrated into Quizlet for adaptive flashcards, practice tests, and tutoring conversations.",
+      "category": "Assessment / Study",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "Yes - education platform",
+      "accessibility": "High",
+      "nzRelevance": "Vocabulary study, comprehension review, text recall",
+      "subjectTags": [
+        "English"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "green",
+      "teacherTrafficLight": "green",
+      "notes": "Strong for teacher-created vocabulary and text study sets; well-established NZ school use"
+    },
+    {
+      "id": "quillbot",
+      "name": "QuillBot",
+      "url": "https://quillbot.com",
+      "description": "AI paraphrasing and writing tool for rewriting, summarising, and improving written content.",
+      "category": "Writing",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "No",
+      "accessibility": "High",
+      "nzRelevance": "Writing, paraphrasing, summarising, editing",
+      "subjectTags": [
+        "English"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "red",
+      "teacherTrafficLight": "green",
+      "notes": "High student misuse risk for academic dishonesty; useful for teachers generating paraphrase exemplars"
+    },
+    {
+      "id": "boodlebox-ai",
+      "name": "BoodleBox AI",
+      "url": "https://boodlebox.ai",
+      "description": "Education-focused AI platform allowing teachers to create guided AI experiences for students with controlled parameters.",
+      "category": "Education Technology",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "High",
+      "guardrails": "Yes - education platform",
+      "accessibility": "High",
+      "nzRelevance": "AI literacy, writing, research, guided AI tasks",
+      "subjectTags": [
+        "English",
+        "All subjects"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "green",
+      "teacherTrafficLight": "green",
+      "notes": "Purpose-built for education; teacher controls AI parameters; excellent for structured AI literacy tasks"
+    },
+    {
+      "id": "final-round-ai",
+      "name": "Final Round AI",
+      "url": "https://www.finalroundai.com",
+      "description": "AI-powered interview preparation and practice tool using real-time coaching and feedback on spoken responses.",
+      "category": "Assessment / Speaking",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "Partial",
+      "accessibility": "Medium",
+      "nzRelevance": "Oral language, speech preparation, interview skills",
+      "subjectTags": [
+        "English"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "Useful for oral preparation and speech practice; data stored commercially"
+    },
+    {
+      "id": "microsoft-editor",
+      "name": "Microsoft Editor",
+      "url": "https://www.microsoft.com/en-us/edge/features/editor",
+      "description": "AI writing assistant built into Microsoft Edge and Word for grammar, spelling, and style suggestions.",
+      "category": "Writing",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "Partial",
+      "accessibility": "High",
+      "nzRelevance": "Writing accuracy, editing, spelling and grammar",
+      "subjectTags": [
+        "English"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "green",
+      "teacherTrafficLight": "green",
+      "notes": "Integrated into Microsoft 365 school accounts; useful for teacher professional writing and student editing support"
+    },
+    {
+      "id": "midjourney",
+      "name": "Midjourney",
+      "url": "https://www.midjourney.com",
+      "description": "High-quality AI image generation tool operating through Discord, producing detailed artistic images from text prompts.",
+      "category": "Image Generation",
+      "cost": "Paid",
+      "freeTier": false,
+      "privacyRating": "Low",
+      "guardrails": "No",
+      "accessibility": "Low",
+      "nzRelevance": "Visual language, creative arts",
+      "subjectTags": [
+        "Arts",
+        "Media Studies"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "red",
+      "teacherTrafficLight": "green",
+      "notes": "Highest quality AI image generation; excellent for teachers creating visual resources; not for student use"
+    },
+    {
+      "id": "packback",
+      "name": "Packback",
+      "url": "https://www.packback.co",
+      "description": "AI-enhanced online discussion platform that promotes curiosity-driven questioning and peer learning.",
+      "category": "Education Technology",
+      "cost": "Paid",
+      "freeTier": false,
+      "privacyRating": "Medium",
+      "guardrails": "Yes - education platform",
+      "accessibility": "Medium",
+      "nzRelevance": "Oral/written discussion, questioning skills, critical thinking",
+      "subjectTags": [
+        "English"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "Education-focused; strong for discussion-based learning; no free tier"
+    },
+    {
+      "id": "suno-ai",
+      "name": "Suno AI",
+      "url": "https://suno.com",
+      "description": "AI music generation tool that creates full songs with vocals and instrumentation from text prompts.",
+      "category": "Music Composition",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "No",
+      "accessibility": "Low",
+      "nzRelevance": "Limited direct NZ English curriculum relevance",
+      "subjectTags": [
+        "Music",
+        "Arts"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "amber",
+      "notes": "Copyright ownership of generated songs contested; limited English curriculum relevance"
+    },
+    {
+      "id": "nightcafe",
+      "name": "Nightcafe",
+      "url": "https://nightcafe.studio",
+      "description": "AI image generation tool with multiple art style options and a community gallery for sharing creations.",
+      "category": "Image Generation",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "No",
+      "accessibility": "Low",
+      "nzRelevance": "Visual language, creative exploration",
+      "subjectTags": [
+        "Arts",
+        "Media Studies"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "amber",
+      "notes": "Community gallery requires moderation; better teacher image generation tools available"
+    },
+    {
+      "id": "dreamstudio",
+      "name": "DreamStudio",
+      "url": "https://dreamstudio.ai",
+      "description": "Stable Diffusion-powered AI image generation tool for creating detailed images from text prompts.",
+      "category": "Image Generation",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "No",
+      "accessibility": "Low",
+      "nzRelevance": "Visual language, creative arts",
+      "subjectTags": [
+        "Arts",
+        "Media Studies"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "amber",
+      "notes": "Credit-based system; copyright concerns with training data; better licensed alternatives available"
+    },
+    {
+      "id": "teacher-s-buddy",
+      "name": "Teacher's Buddy",
+      "url": "https://teachersbuddy.com/region/nz",
+      "description": "NZ-founded AI platform for generating lesson plans, assessments, reports, and differentiated resources aligned to the NZ curriculum and NCEA standards.",
+      "category": "Teacher Productivity",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "High",
+      "guardrails": "Yes - education platform",
+      "accessibility": "High",
+      "nzRelevance": "Lesson planning, NCEA assessment design, report writing, differentiation",
+      "subjectTags": [
+        "English",
+        "All subjects"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "green",
+      "teacherTrafficLight": "green",
+      "notes": "NZ-founded and NZ curriculum-aligned; PPTA-endorsed; 12,000+ teachers globally; strong for reducing teacher workload while staying NCEA-relevant"
+    },
+    {
+      "id": "writer-s-toolbox",
+      "name": "Writer's Toolbox",
+      "url": "https://www.writerstoolbox.com",
+      "description": "NZ-developed educational AI that teaches writing composition through patented AI, analysing precision, fluency, and coherence and providing instant improvement feedback.",
+      "category": "Writing / Assessment",
+      "cost": "Paid",
+      "freeTier": false,
+      "privacyRating": "High",
+      "guardrails": "Yes - education platform",
+      "accessibility": "High",
+      "nzRelevance": "Writing composition, sentence structure, fluency, coherence, NCEA writing standards",
+      "subjectTags": [
+        "English"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "green",
+      "teacherTrafficLight": "green",
+      "notes": "NZ-developed; ERO-endorsed results showing double the writing effect scores in NZ schools; not generative AI - analyses and guides rather than produces content; strong academic integrity profile"
+    },
+    {
+      "id": "brisk",
+      "name": "Brisk",
+      "url": "https://www.briskteaching.com",
+      "description": "Chrome extension AI for teachers that works inside Google Docs, Slides, and PDFs to generate feedback, create resources, differentiate content, and analyse student writing.",
+      "category": "Teacher Productivity",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "Yes - education platform",
+      "accessibility": "High",
+      "nzRelevance": "Feedback generation, differentiation, lesson resources, writing analysis",
+      "subjectTags": [
+        "English",
+        "All subjects"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "Works inside existing Google Workspace tools; strong for whole-class feedback at scale; recommended at NZ teacher PD workshops"
+    },
+    {
+      "id": "snorkl",
+      "name": "Snorkl",
+      "url": "https://snorkl.app",
+      "description": "Multimodal AI platform where students express thinking through speaking, drawing, and writing, receiving instant personalised feedback; teachers get real-time class insights.",
+      "category": "Student Learning",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "Yes - education platform",
+      "accessibility": "High",
+      "nzRelevance": "Oral language, written expression, multimodal communication, formative assessment",
+      "subjectTags": [
+        "English",
+        "All subjects"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "green",
+      "teacherTrafficLight": "green",
+      "notes": "Supports multilingual learners in 40+ languages; strong for NZ diverse classrooms; teacher gets real-time misconception data; mentioned in NZ PD workshops"
+    },
+    {
+      "id": "flow21",
+      "name": "Flow21",
+      "url": "https://flow21.ai",
+      "description": "AI workflow and lesson planning platform used by NZ teachers for generating curriculum-aligned resources and lesson plans.",
+      "category": "Teacher Productivity",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Medium",
+      "guardrails": "Partial",
+      "accessibility": "High",
+      "nzRelevance": "Lesson planning, resource generation, curriculum planning",
+      "subjectTags": [
+        "English",
+        "All subjects"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "green",
+      "notes": "Featured in Wellington NZ teacher AI workshops; NZ curriculum prompt library available; good for rapid resource generation"
+    },
+    {
+      "id": "school-ai",
+      "name": "School AI",
+      "url": "https://schoolai.com",
+      "description": "Education-focused AI platform where teachers create custom AI assistants for students with controlled parameters, age-appropriate guardrails, and teacher monitoring.",
+      "category": "Education Technology",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "High",
+      "guardrails": "Yes - education platform",
+      "accessibility": "High",
+      "nzRelevance": "AI literacy, writing, research, guided AI tasks, reading comprehension",
+      "subjectTags": [
+        "English",
+        "All subjects"
+      ],
+      "yearLevel": "9-13",
+      "studentTrafficLight": "green",
+      "teacherTrafficLight": "green",
+      "notes": "Strong education guardrails and teacher monitoring; recommended in NZ Education Group PD workshops alongside Curipod and GeminiNotebook; excellent for supervised student AI use"
+    },
+    {
+      "id": "grok",
+      "name": "Grok",
+      "url": "https://grok.com",
+      "description": "AI assistant by xAI with real-time web access and a direct conversational style, positioned as an alternative to ChatGPT and Gemini.",
+      "category": "Chatbot",
+      "cost": "Freemium",
+      "freeTier": true,
+      "privacyRating": "Low",
+      "guardrails": "No",
+      "accessibility": "Medium",
+      "nzRelevance": "Writing, research, brainstorming, general AI literacy exploration",
+      "subjectTags": [
+        "English",
+        "All subjects"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "amber",
+      "notes": "No education-specific guardrails; data privacy less established than Microsoft/Google alternatives; included in NZ teacher AI workshops as a frontier LLM to know about"
+    },
+    {
+      "id": "meta-ai",
+      "name": "Meta AI",
+      "url": "https://www.meta.ai",
+      "description": "AI assistant by Meta integrated across Facebook, Instagram, and WhatsApp, offering writing, research, and creative support.",
+      "category": "Chatbot",
+      "cost": "Free",
+      "freeTier": true,
+      "privacyRating": "Low",
+      "guardrails": "No",
+      "accessibility": "Medium",
+      "nzRelevance": "Writing, research, creative generation",
+      "subjectTags": [
+        "English",
+        "All subjects"
+      ],
+      "yearLevel": "11-13",
+      "studentTrafficLight": "amber",
+      "teacherTrafficLight": "amber",
+      "notes": "No education guardrails; Meta data privacy practices a concern for student use; included in NZ teacher AI workshops as a frontier LLM; better alternatives available for classroom use"
     }
   ]
 }

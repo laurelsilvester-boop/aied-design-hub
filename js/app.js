@@ -49,24 +49,30 @@ function renderCards(tools) {
     card.setAttribute('role', 'listitem');
 
     card.innerHTML = `
-      <img
-        class="tool-logo"
-        src="https://www.google.com/s2/favicons?domain=${escHtml(getDomain(tool.url))}&sz=64"
-        alt=""
-        width="40"
-        height="40"
-        loading="lazy"
-      />
       <div class="card-header">
         <span class="tool-name">${escHtml(tool.name)}</span>
         <span class="category-badge">${escHtml(tool.category)}</span>
       </div>
       <p class="tool-description">${escHtml(tool.description)}</p>
-      <div class="traffic-lights" aria-label="Safety ratings">
-        ${trafficItem('Cost', tool.ratings.cost, tool.notes.cost)}
-        ${trafficItem('Privacy', tool.ratings.privacy, tool.notes.privacy)}
-        ${trafficItem('Guardrails', tool.ratings.guardrails, tool.notes.guardrails)}
-        ${trafficItem('Accessibility', tool.ratings.accessibility, tool.notes.accessibility)}
+      <div class="card-meta">
+        <img
+          class="tool-logo"
+          src="https://www.google.com/s2/favicons?domain=${escHtml(getDomain(tool.url))}&sz=64"
+          alt=""
+          width="40"
+          height="40"
+          loading="lazy"
+        />
+        <div class="ratings-group">
+          <div class="traffic-lights" aria-label="Safety ratings">
+            ${trafficItem('Student', tool.studentTrafficLight, tool.notes)}
+            ${trafficItem('Teacher', tool.teacherTrafficLight, tool.notes)}
+          </div>
+          <div class="accessibility-note" aria-label="Accessibility rating: ${escHtml(tool.accessibility)}">
+            <span aria-hidden="true">&#9855;</span>
+            <span>Accessibility: ${escHtml(tool.accessibility)}</span>
+          </div>
+        </div>
       </div>
       <div class="card-footer">
         <a
@@ -121,12 +127,12 @@ function applyFilters() {
     const matchesQuery = !query ||
       tool.name.toLowerCase().includes(query) ||
       tool.description.toLowerCase().includes(query) ||
-      (tool.tags && tool.tags.some(tag => tag.toLowerCase().includes(query)));
+      (tool.subjectTags && tool.subjectTags.some(tag => tag.toLowerCase().includes(query)));
 
     const matchesCategory   = !category   || tool.category === category;
-    const matchesCost       = !cost       || tool.ratings.cost === cost;
-    const matchesPrivacy    = !privacy    || tool.ratings.privacy === privacy;
-    const matchesGuardrails = !guardrails || tool.ratings.guardrails === guardrails;
+    const matchesCost       = !cost       || tool.cost === cost;
+    const matchesPrivacy    = !privacy    || tool.privacyRating === privacy;
+    const matchesGuardrails = !guardrails || tool.guardrails === guardrails;
 
     return matchesQuery && matchesCategory && matchesCost && matchesPrivacy && matchesGuardrails;
   });
