@@ -50,11 +50,6 @@ function renderCards(tools) {
 
     card.innerHTML = `
       <div class="card-header">
-        <span class="tool-name">${escHtml(tool.name)}</span>
-        <span class="category-badge">${escHtml(tool.category)}</span>
-      </div>
-      <p class="tool-description">${escHtml(tool.description)}</p>
-      <div class="card-meta">
         <img
           class="tool-logo"
           src="https://www.google.com/s2/favicons?domain=${escHtml(getDomain(tool.url))}&sz=64"
@@ -63,16 +58,16 @@ function renderCards(tools) {
           height="40"
           loading="lazy"
         />
-        <div class="ratings-group">
-          <div class="traffic-lights" aria-label="Safety ratings">
-            ${trafficItem('Student', tool.studentTrafficLight, tool.notes)}
-            ${trafficItem('Teacher', tool.teacherTrafficLight, tool.notes)}
-          </div>
-          <div class="accessibility-note" aria-label="Accessibility rating: ${escHtml(tool.accessibility)}">
-            <span aria-hidden="true">&#9855;</span>
-            <span>Accessibility: ${escHtml(tool.accessibility)}</span>
-          </div>
+        <div class="card-header-text">
+          <span class="tool-name">${escHtml(tool.name)}</span>
+          <span class="category-badge">${escHtml(tool.category)}</span>
         </div>
+      </div>
+      <p class="tool-description">${escHtml(tool.description)}</p>
+      <div class="traffic-lights" aria-label="Safety ratings">
+        ${trafficItem('Student', tool.studentTrafficLight, tool.notes)}
+        ${trafficItem('Teacher', tool.teacherTrafficLight, tool.notes)}
+        ${trafficItem('Accessibility', accessibilityRating(tool.accessibility), tool.notes)}
       </div>
       <div class="card-footer">
         <a
@@ -87,6 +82,11 @@ function renderCards(tools) {
 
     grid.appendChild(card);
   });
+}
+
+function accessibilityRating(accessibility) {
+  const map = { High: 'green', Medium: 'amber', Low: 'red' };
+  return map[accessibility] || '';
 }
 
 function trafficItem(label, rating, note) {

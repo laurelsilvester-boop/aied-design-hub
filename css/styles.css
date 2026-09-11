@@ -249,8 +249,15 @@ h1 {
 
 .card-header {
   display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.card-header-text {
+  display: flex;
   flex-direction: column;
   gap: 0.3rem;
+  min-width: 0;
 }
 
 .tool-name {
@@ -276,25 +283,11 @@ h1 {
   flex: 1;
 }
 
-/* === Card meta (logo + ratings) === */
-.card-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-}
-
-.ratings-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  flex: 1;
-}
-
 /* === Traffic lights === */
 .traffic-lights {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.9rem;
 }
 
 .traffic-item {
@@ -316,15 +309,6 @@ h1 {
 .dot-green { background: var(--green); }
 .dot-amber { background: var(--amber); }
 .dot-red   { background: var(--red); }
-
-/* === Accessibility note === */
-.accessibility-note {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
 
 /* === Card footer === */
 .card-footer {
