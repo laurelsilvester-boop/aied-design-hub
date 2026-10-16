@@ -122,9 +122,7 @@
     margin-top: 0.4rem;
   }
 
-  select,
-  input[type="password"],
-  input[type="text"] {
+  select {
     width: 100%;
     padding: 0.55rem 0;
     border: none;
@@ -137,8 +135,7 @@
     transition: border-color 0.15s;
   }
 
-  select:focus,
-  input:focus {
+  select:focus {
     outline: none;
     border-bottom-color: var(--accent);
   }
@@ -246,18 +243,6 @@
 
   <main>
     <div class="card">
-      <h2>Anthropic API key</h2>
-      <div class="field">
-        <label for="api-key">API key</label>
-        <input type="password" id="api-key" placeholder="sk-ant-..." autocomplete="off" />
-        <p class="hint">
-          Entered here for now and used only in your browser to call the Anthropic API directly. It is not saved
-          or sent anywhere else. We will move this to a secure backend in a future version.
-        </p>
-      </div>
-    </div>
-
-    <div class="card">
       <h2>Class details</h2>
       <form id="generator-form">
         <div class="field">
@@ -342,28 +327,8 @@
   </footer>
 
   <script>
-    const SYSTEM_PROMPT = `You are a curriculum design assistant for New Zealand secondary school English teachers. Ground every response in two frameworks:
-
-1. The UNESCO AI Competency Framework for Teachers, particularly the aspects of using AI to enhance pedagogy, promoting equitable and ethical use of AI, and building students' AI and information literacy alongside subject learning.
-2. The New Zealand Curriculum, English learning area, including its focus on making meaning and creating meaning across oral, written, and visual text, and progression through the achievement objectives and, where relevant, NCEA achievement standards.
-
-You generate short, practical activity ideas and discussion hooks for a given year level and topic. You do NOT write full lesson plans. Do not include learning intentions, success criteria, timings, resourcing lists, or step-by-step lesson structure.
-
-Respond in this exact format using markdown:
-
-### Activity ideas
-- 3 to 4 short, concrete classroom activity ideas (one line each) suitable for the stated year level and topic, appropriate to the sophistication expected at that level
-
-### Discussion hooks
-- 3 to 4 open-ended discussion questions or provocations that could start or extend a lesson on this topic
-
-### AI literacy angle
-- 1 to 2 short suggestions for how AI tools or AI literacy could be woven into this topic responsibly, in line with the UNESCO AI Competency Framework for Teachers
-
-Keep the whole response concise. Use plain, teacher-friendly language. Do not add any preamble, sign-off, or extra sections beyond the three above.`;
 
     const form = document.getElementById('generator-form');
-    const apiKeyInput = document.getElementById('api-key');
     const submitBtn = document.getElementById('submit-btn');
     const statusEl = document.getElementById('status');
     const outputCard = document.getElementById('output-card');
@@ -434,13 +399,6 @@ Keep the whole response concise. Use plain, teacher-friendly language. Do not ad
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
 
-      const apiKey = apiKeyInput.value.trim();
-      if (!apiKey) {
-        setStatus('Enter your Anthropic API key above first.', 'error');
-        apiKeyInput.focus();
-        return;
-      }
-
       const yearLevel = document.getElementById('year-level').value;
       const topic = document.getElementById('topic').value;
 
@@ -449,42 +407,21 @@ Keep the whole response concise. Use plain, teacher-friendly language. Do not ad
       setStatus('Generating ideas...', 'loading');
 
       try {
-        const response = await fetch('https://api.anthropic.com/v1/messages', {
+        const response = await fetch('/.netlify/functions/generate-lesson', {
           method: 'POST',
           headers: {
-            'content-type': 'application/json',
-            'x-api-key': apiKey,
-            'anthropic-version': '2023-06-01',
-            'anthropic-dangerous-direct-browser-access': 'true'
+            'content-type': 'application/json'
           },
-          body: JSON.stringify({
-            model: 'claude-haiku-4-5-20251001',
-            max_tokens: 600,
-            system: SYSTEM_PROMPT,
-            messages: [
-              {
-                role: 'user',
-                content: `Year level: ${yearLevel}\nTopic: ${topic}`
-              }
-            ]
-          })
+          body: JSON.stringify({ yearLevel, topic })
         });
 
+        const data = await response.json();
+
         if (!response.ok) {
-          const errorBody = await response.json().catch(() => null);
-          const message = errorBody && errorBody.error && errorBody.error.message
-            ? errorBody.error.message
-            : `Request failed with status ${response.status}`;
-          throw new Error(message);
+          throw new Error(data && data.error ? data.error : `Request failed with status ${response.status}`);
         }
 
-        const data = await response.json();
-        const text = (data.content || [])
-          .filter((block) => block.type === 'text')
-          .map((block) => block.text)
-          .join('\n');
-
-        outputEl.innerHTML = renderMarkdown(text || 'No response received.');
+        outputEl.innerHTML = renderMarkdown(data.text || 'No response received.');
         outputMeta.textContent = `${yearLevel} - ${topic}`;
         outputCard.style.display = 'block';
         setStatus('', '');
