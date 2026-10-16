@@ -149,6 +149,16 @@
     gap: 0.5rem;
   }
 
+  .source-favicon {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid var(--divider);
+    background: var(--bg);
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
   .source-count {
     font-size: 0.72rem;
     font-weight: 600;
@@ -396,10 +406,10 @@
     const ARTICLES_PER_SOURCE = 5;
 
     const FEEDS = [
-      { name: "EdSurge", url: "https://www.edsurge.com/articles_rss" },
-      { name: "The Hechinger Report", url: "https://hechingerreport.org/feed/" },
-      { name: "Education Week", url: "https://www.edweek.org/feed.rss" },
-      { name: "The Verge AI", url: "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml" }
+      { name: "EdSurge", url: "https://www.edsurge.com/articles_rss", domain: "edsurge.com" },
+      { name: "The Hechinger Report", url: "https://hechingerreport.org/feed/", domain: "hechingerreport.org" },
+      { name: "Education Week", url: "https://www.edweek.org/feed.rss", domain: "edweek.org" },
+      { name: "The Verge AI", url: "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", domain: "theverge.com" }
     ];
 
     const container = document.getElementById("feeds-container");
@@ -423,7 +433,7 @@
       group.className = "source-group";
       group.id = `source-${cssId(source.name)}`;
       group.innerHTML = `
-        <div class="source-title">${escapeHtml(source.name)} <span class="source-count" data-count>&hellip;</span></div>
+        <div class="source-title"><img class="source-favicon" src="https://www.google.com/s2/favicons?domain=${encodeURIComponent(source.domain)}&sz=32" width="32" height="32" alt="" loading="lazy" /> ${escapeHtml(source.name)} <span class="source-count" data-count>&hellip;</span></div>
         <div class="feed-loading" data-state>Loading latest articles&hellip;</div>
       `;
       return group;
