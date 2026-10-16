@@ -311,6 +311,12 @@
     margin-bottom: 0.5rem;
   }
 
+  .resource-description {
+    font-size: 0.92rem;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
   .resource-link {
     font-size: 0.85rem;
     font-weight: 600;
@@ -514,78 +520,91 @@
       {
         title: "NetSafe NZ: Artificial Intelligence",
         meta: "NetSafe NZ",
+        description: "Practical guidance for NZ schools and teachers on safe and responsible use of AI tools.",
         link: "https://netsafe.org.nz/artificial-intelligence",
         tags: ["NZ Specific", "AI Literacy", "Digital Citizenship"]
       },
       {
         title: "Beginner's Guide to AI Literacy for Educators",
         meta: "Ako Aotearoa",
+        description: "An accessible introduction to AI literacy concepts for educators in the NZ tertiary context.",
         link: "https://ako.ac.nz/programmes-and-services/collections/artificial-intelligence-ai-in-tertiary-education/practical-tips/beginners-guide-to-ai-literacy-for-educators",
         tags: ["NZ Specific", "AI Literacy", "Pedagogy"]
       },
       {
         title: "Whose Artificial Intelligence? Reflecting on AI and Te Ao Māori",
         meta: "Design Assembly NZ — 2023",
+        description: "A critical reflection on how AI intersects with Te Ao Māori values, sovereignty, and cultural identity.",
         link: "https://designassembly.org.nz/2023/05/08/whose-artificial-intelligence-reflecting-on-the-intersection-of-ai-and-te-ao-maori/",
         tags: ["NZ Specific", "AI Ethics", "AI Literacy"]
       },
       {
         title: "AI and Education Report",
         meta: "MIT",
+        description: "A comprehensive research report exploring the current state and future of AI in education globally.",
         link: "https://aiandeducation.mit.edu/report/",
         tags: ["International", "Policy Document", "AI Literacy", "Pedagogy"]
       },
       {
         title: "How AI Could Radically Change Schools by 2050",
         meta: "Harvard Gazette — 2025",
+        description: "A forward-looking exploration of how AI might transform schooling and learning by 2050.",
         link: "https://news.harvard.edu/gazette/story/2025/09/how-ai-could-radically-change-schools-by-2050/",
         tags: ["International", "Pedagogy", "AI Literacy"]
       },
       {
         title: "AI in Research",
         meta: "Nature — 2025",
+        description: "An examination of how AI is reshaping research practices and what this means for academic integrity.",
         link: "https://www.nature.com/articles/d41586-025-03570-y",
         tags: ["International", "Academic Journal", "Generative AI"]
       },
       {
         title: "What's Worth Measuring? Future Assessment in the AI Age",
         meta: "UNESCO",
+        description: "UNESCO's perspective on reimagining assessment design and measurement in an AI-integrated world.",
         link: "https://www.unesco.org/en/articles/whats-worth-measuring-future-assessment-ai-age",
         tags: ["UNESCO", "Assessment", "AI Literacy"]
       },
       {
         title: "Critical Studies of AI and Education: Putting a Stake in the Ground",
         meta: "Holmes et al., SSRN — 2025",
+        description: "A community-authored critical study of AI and education drawing on 185 researchers from 56 countries.",
         link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5391793",
         tags: ["International", "Academic Journal", "AI Ethics", "AI Literacy", "Pedagogy"]
       },
       {
         title: "Cultivating Independent Thinkers: AI, Bloom's Taxonomy and Critical Thinking in Assessment Pedagogy",
         meta: "Lubbe, Marais & Kruger, Education and Information Technologies — 2025",
+        description: "A conceptual study exploring how Bloom's taxonomy and critical thinking can be reframed for a generative AI era.",
         link: "https://link.springer.com/article/10.1007/s10639-025-13476-x",
         tags: ["International", "Academic Journal", "Assessment", "Critical Thinking", "Pedagogy"]
       },
       {
         title: "Teaching AI Ethics",
         meta: "Leon Furze — 2026",
+        description: "A practical classroom-ready guide to teaching AI ethics across curriculum areas.",
         link: "https://leonfurze.com/wp-content/uploads/2026/02/Teaching_AI_Ethics_PDF_Version_A4_compressed.pdf",
         tags: ["International", "AI Ethics", "AI Literacy", "Pedagogy"]
       },
       {
         title: "Rethinking Assessments in the Age of AI",
         meta: "Charles Sturt University",
+        description: "Practical frameworks for redesigning assessments to remain valid and meaningful in the age of AI.",
         link: "https://www.csu.edu.au/division/learning-teaching/assessments/assessment-and-artificial-intelligence/rethinking-assessments",
         tags: ["International", "Assessment", "Pedagogy"]
       },
       {
         title: "AI Transparency Surveys: Navigating Student Choices Together",
         meta: "Edutopia",
+        description: "A practical tool for using student AI transparency surveys to open classroom conversations about AI use.",
         link: "https://www.edutopia.org/article/ai-transparency-surveys-tool-navigating-student-choices-together",
         tags: ["International", "AI Literacy", "Pedagogy", "Digital Citizenship"]
       },
       {
         title: "The EAP-AIAS: Adapting the AI Assessment Scale for English for Academic Purposes",
         meta: "Roe, Perkins & Tregubova, TESOL Journal — 2024",
+        description: "An adaptation of the AI Assessment Scale specifically for English language and academic purposes contexts.",
         link: "https://doi.org/10.1002/tesj.70122",
         tags: ["International", "Academic Journal", "Assessment", "AI Literacy"]
       }
@@ -633,6 +652,7 @@
         <article class="resource-card">
           <h3 class="resource-title">${escapeHtml(r.title)}</h3>
           <p class="resource-meta">${escapeHtml(r.meta)}</p>
+          <p class="resource-description">${escapeHtml(r.description)}</p>
           <a class="resource-link" href="${escapeHtml(r.link)}" target="_blank" rel="noopener noreferrer">Read more &rarr;</a>
           <div class="resource-tags">
             ${r.tags.map(tag => `<span class="resource-tag">${escapeHtml(tag)}</span>`).join("")}
