@@ -408,14 +408,14 @@
   </footer>
 
   <script>
-    const RSS2JSON_ENDPOINT = "https://api.rss2json.com/v1/api.json?rss_url=";
+    const FEED_ENDPOINT = "/.netlify/functions/fetch-feed?source=";
     const ARTICLES_PER_SOURCE = 5;
 
     const FEEDS = [
-      { name: "EdSurge", url: "https://www.edsurge.com/articles_rss", domain: "edsurge.com" },
-      { name: "The Hechinger Report", url: "https://hechingerreport.org/feed/", domain: "hechingerreport.org" },
-      { name: "Education Week", url: "https://www.edweek.org/feed.rss", domain: "edweek.org" },
-      { name: "The Verge AI", url: "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", domain: "theverge.com" }
+      { name: "EdSurge", slug: "edsurge", url: "https://www.edsurge.com/articles_rss", domain: "edsurge.com" },
+      { name: "The Hechinger Report", slug: "hechinger", url: "https://hechingerreport.org/feed/", domain: "hechingerreport.org" },
+      { name: "Education Week", slug: "edweek", url: "https://www.edweek.org/feed.rss", domain: "edweek.org" },
+      { name: "The Verge AI", slug: "theverge", url: "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", domain: "theverge.com" }
     ];
 
     const container = document.getElementById("feeds-container");
@@ -455,7 +455,7 @@
       const countEl = group.querySelector("[data-count]");
 
       try {
-        const apiUrl = RSS2JSON_ENDPOINT + encodeURIComponent(source.url);
+        const apiUrl = FEED_ENDPOINT + encodeURIComponent(source.slug);
         const res = await fetch(apiUrl);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
